@@ -1,8 +1,32 @@
-.button {
+.buttonAuthorization {
   width: 101px;
   height: 51px;
   color: #ffffff;
-  background-color: #54A0FF;
+  background-color: #54a0ff;
   border: none;
   border-radius: 10px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.buttonAccount {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    background: none;
+    border: none;
+  }
+}
+
+.accountIcon {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    width: 20px;
+    height: 24px;
+  }
 }

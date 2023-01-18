@@ -1,6 +1,22 @@
+.root {
+  min-width: 178px;
+
+  @media (max-width: 768px) {
+    min-width: 100px;
+  }
+}
+
 .logoImg {
   width: 128px;
   height: 36px;
   margin-top: 6px;
   margin-bottom: 9px;
+  vertical-align: middle;
+
+  @media (max-width: 768px) {
+    width: 75px;
+    height: 21px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
 }

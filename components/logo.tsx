@@ -4,7 +4,7 @@ import logoImg from '../public/images/logo.svg';
 
 function Logo(): JSX.Element {
   return (
-    <div>
+    <div className={styles.root}>
       <Image
         className={styles.logoImg}
         src={logoImg}

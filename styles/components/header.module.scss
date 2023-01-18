@@ -1,19 +1,37 @@
 .root {
   height: 91px;
   padding: 20px 0;
+
+  @media(max-width: 768px) {
+    height: 69px;
+
+    outline: 1px solid blue;
+  }
 }
 
 .wrapper {
   display: grid;
-  grid-template-columns: 1fr 598px;
+  grid-template-columns: 1fr minmax(550px, 598px);
   align-items: center;
   max-width: 1625px;
   margin: 0 auto;
   padding: 0 20px;
+
+  @media(max-width: 768px) {
+    grid-template-columns: 75px 78px;
+    justify-content: space-between;
+    padding: 0 64px;
+
+    outline: 1px solid blue;
+  }
 }
 
-.containerontainer {
+.menuContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media(max-width: 768px) {
+    max-width: 78px;
+  }
 }

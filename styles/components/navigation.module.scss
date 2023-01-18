@@ -1,3 +1,9 @@
+.root {
+  @media (max-width: 768px) {
+    order: 1;
+  }
+}
+
 .list {
   display: flex;
   flex-wrap: wrap;
@@ -6,9 +12,31 @@
   gap: 10px 52px;
   max-width: 420px;
   list-style: none;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .helpIcon {
   width: 24px;
   height: 24px;
+}
+
+.toggleButton {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    background: none;
+    border: none;
+  }
+}
+
+.toggleIcon {
+  @media (max-width: 768px) {
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+  }
 }
