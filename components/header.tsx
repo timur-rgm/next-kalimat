@@ -1,22 +1,17 @@
 import Image from 'next/image';
+import Logo from './logo';
 import styles from '../styles/components/header.module.scss';
 import logoImg from '../public/images/logo.svg';
 import helpIcon from '../public/images/help-icon.svg';
 
-function Header() {
+// Произвести декопмозицию
+// Сверстать планшетную и мобильную версии
+
+function Header(): JSX.Element {
   return (
     <header className={styles.root}>
       <div className={styles.wrapper}>
-        <div className={styles.logoContainer}>
-          <Image
-            className={styles.logoImg}
-            src={logoImg}
-            alt="Логотип Калимат"
-            width={128}
-            height={36}
-          />
-        </div>
-
+        <Logo />
         <div className={styles.menuContainer}>
           <nav className={styles.navigationContainer}>
             <ul className={styles.navigationList}>
