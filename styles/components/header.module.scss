@@ -1,0 +1,49 @@
+.root {
+  height: 91px;
+  padding: 20px 0;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 598px;
+  align-items: center;
+  max-width: 1625px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logoImg {
+  width: 128px;
+  height: 36px;
+  margin-top: 6px;
+  margin-bottom: 9px;
+}
+
+.menuContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigationList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px 52px;
+  max-width: 420px;
+  list-style: none;
+}
+
+.navigationList li:last-child {
+  color: red;
+}
+
+.authorizationButton {
+  width: 101px;
+  height: 51px;
+  color: #ffffff;
+  background-color: #54A0FF;
+  border: none;
+  border-radius: 10px;
+}
