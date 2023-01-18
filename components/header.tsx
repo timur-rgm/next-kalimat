@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Logo from './logo';
+import Navigation from './navigation';
 import styles from '../styles/components/header.module.scss';
 import logoImg from '../public/images/logo.svg';
 import helpIcon from '../public/images/help-icon.svg';
@@ -13,22 +14,7 @@ function Header(): JSX.Element {
       <div className={styles.wrapper}>
         <Logo />
         <div className={styles.menuContainer}>
-          <nav className={styles.navigationContainer}>
-            <ul className={styles.navigationList}>
-              <li>Библиотека</li>
-              <li>Курсы</li>
-              <li>Разделы</li>
-              <li>
-                <Image
-                  className={styles.helpIcon}
-                  src={helpIcon}
-                  alt="Справка"
-                  width={24}
-                  height={24}
-                />
-              </li>
-            </ul>
-          </nav>
+          <Navigation />
           <div className={styles.authorizationContainer}>
             <button className={styles.authorizationButton}>Войти</button>
           </div>

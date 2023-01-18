@@ -18,20 +18,6 @@
   align-items: center;
 }
 
-.navigationList {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  gap: 10px 52px;
-  max-width: 420px;
-  list-style: none;
-}
-
-.navigationList li:last-child {
-  color: red;
-}
-
 .authorizationButton {
   width: 101px;
   height: 51px;

@@ -1,0 +1,14 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px 52px;
+  max-width: 420px;
+  list-style: none;
+}
+
+.helpIcon {
+  width: 24px;
+  height: 24px;
+}
