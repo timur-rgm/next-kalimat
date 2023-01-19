@@ -10,7 +10,7 @@ function Authorization(): JSX.Element {
         <Image
           className={styles.accountIcon}
           src={accountIcon}
-          alt="Справка"
+          alt="Иконка входа в аккаунт"
           width={20}
           height={24}
         />

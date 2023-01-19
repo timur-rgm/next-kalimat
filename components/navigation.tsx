@@ -1,12 +1,22 @@
+import { useState } from 'react';
 import Image from 'next/image';
-import styles from '../styles/components/navigation.module.scss';
 import helpIcon from '../public/images/help-icon.svg';
 import toggleIcon from '../public/images/menu-burger-icon.svg';
+import closeIcon from '../public/images/close-icon.svg';
+import styles from '../styles/components/navigation.module.scss';
+import utilStyles from '../styles/utils.module.scss';
+import cn from 'classnames';
 
 function Navigation(): JSX.Element {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
+  const handleNavMenuClick = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
   return (
     <nav className={styles.root}>
-      <ul className={styles.list}>
+      <ul className={cn(styles.list, { [styles.listOpened]: isMenuOpen })}>
         <li>Библиотека</li>
         <li>Курсы</li>
         <li>Разделы</li>
@@ -14,7 +24,7 @@ function Navigation(): JSX.Element {
           <Image
             className={styles.helpIcon}
             src={helpIcon}
-            alt="Иконка авторизации"
+            alt="Иконка справки"
             width={24}
             height={24}
           />
@@ -22,11 +32,22 @@ function Navigation(): JSX.Element {
       </ul>
       <button className={styles.toggleButton} type="button">
         <Image
-          className={styles.toggleIcon}
+          className={cn(styles.toggleIcon, { [utilStyles.hidden]: isMenuOpen })}
           src={toggleIcon}
           alt="Иконка открытия меню"
           width={28}
           height={28}
+          onClick={handleNavMenuClick}
+        />
+      </button>
+      <button className={styles.toggleButton} type="button">
+        <Image
+          className={cn(styles.closeIcon, { [utilStyles.hidden]: !isMenuOpen })}
+          src={closeIcon}
+          alt="Иконка закрытия меню"
+          width={20}
+          height={21}
+          onClick={handleNavMenuClick}
         />
       </button>
     </nav>
