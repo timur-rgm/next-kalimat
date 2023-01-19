@@ -5,7 +5,11 @@
   @media(max-width: 768px) {
     height: 69px;
 
-    outline: 1px solid blue;
+    // outline: 1px solid blue;
+  }
+  
+  @media(max-width: 390px) {
+    padding: 18px 0;
   }
 }
 
@@ -22,7 +26,14 @@
     grid-template-columns: 75px 78px;
     padding: 0 64px;
 
-    outline: 1px solid blue;
+    // outline: 1px solid blue;
+  }
+
+  @media(max-width: 390px) {
+    grid-template-columns: 75px 78px;
+    padding: 0 16px;
+
+    // outline: 1px solid blue;
   }
 }
 
@@ -33,5 +44,9 @@
 
   @media(max-width: 768px) {
     max-width: 78px;
+  }
+  
+  @media(max-width: 390px) {
+    margin-top: 7px;
   }
 }

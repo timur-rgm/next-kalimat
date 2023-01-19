@@ -39,8 +39,6 @@ function Navigation(): JSX.Element {
           height={28}
           onClick={handleNavMenuClick}
         />
-      </button>
-      <button className={styles.toggleButton} type="button">
         <Image
           className={cn(styles.closeIcon, { [utilStyles.hidden]: !isMenuOpen })}
           src={closeIcon}
@@ -50,6 +48,9 @@ function Navigation(): JSX.Element {
           onClick={handleNavMenuClick}
         />
       </button>
+      {/* <button className={styles.toggleButton} type="button">
+        
+      </button> */}
     </nav>
   );
 }
