@@ -3,8 +3,6 @@ import Navigation from './navigation';
 import Authorization from './authorization';
 import styles from '../styles/components/header.module.scss';
 
-// Сверстать планшетную и мобильную версии
-
 function Header(): JSX.Element {
   return (
     <header className={styles.root}>

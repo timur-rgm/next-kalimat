@@ -15,24 +15,25 @@
 
   @media (max-width: 768px) {
     display: none;
+    max-width: none;
   }
 }
 
 .listOpened {
   @media (max-width: 768px) {
     position: absolute;
-    top: 75px;
-    left: 64px;
+    top: 69px;
+    left: 0;
     display: block;
-    width: calc(100% - 64px);
+    width: 100%;
+    padding-left: 64px;
   }
   
   @media (max-width: 390px) {
     position: absolute;
-    top: 75px;
-    left: 16px;
     display: block;
-    width: calc(100% - 16px);
+    width: 100%;
+    padding-left: 16px;
   }
 }
 
@@ -46,6 +47,10 @@
 
 .listOpened li {
   @media (max-width: 768px) {
+    &:first-child {
+      margin-top: 15px;
+    }
+
     &:not(last-child) {
       margin-bottom: 15px;
     }

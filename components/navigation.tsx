@@ -48,9 +48,6 @@ function Navigation(): JSX.Element {
           onClick={handleNavMenuClick}
         />
       </button>
-      {/* <button className={styles.toggleButton} type="button">
-        
-      </button> */}
     </nav>
   );
 }
