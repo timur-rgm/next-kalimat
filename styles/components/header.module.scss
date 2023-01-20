@@ -4,8 +4,6 @@
 
   @media(max-width: 768px) {
     height: 69px;
-
-    // outline: 1px solid blue;
   }
   
   @media(max-width: 390px) {
@@ -25,15 +23,11 @@
   @media(max-width: 768px) {
     grid-template-columns: 75px 78px;
     padding: 0 64px;
-
-    // outline: 1px solid blue;
   }
 
   @media(max-width: 390px) {
     grid-template-columns: 75px 78px;
     padding: 0 16px;
-
-    // outline: 1px solid blue;
   }
 }
 
@@ -50,3 +44,5 @@
     margin-top: 7px;
   }
 }
+
+

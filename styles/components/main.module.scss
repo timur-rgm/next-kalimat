@@ -1,0 +1,46 @@
+.root {
+  min-height: 500px;
+  background-color: #f2f2f4;
+}
+
+.wrapper {
+  padding: 60px 20px 0;
+
+  @media (max-width: 768px) {
+    padding: 58px 64px 0;
+  }
+
+  @media (max-width: 390px) {
+    padding: 20px 16px 0;
+  }
+}
+
+.searchContainer {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(178px, 741px) 67px 60px;
+  justify-content: center;
+  max-width: 868px;
+  margin: 0 auto;
+
+  @media (max-width: 610px) {
+    grid-template-columns: minmax(178px, 741px) 45px 44px;
+  }
+}
+
+.settings {
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.settingsIcon {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+
+  @media (max-width: 610px) {
+    width: 24px;
+    height: 24px;
+  }
+}
