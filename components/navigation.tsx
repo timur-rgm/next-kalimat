@@ -4,7 +4,6 @@ import helpIcon from '../public/images/help-icon.svg';
 import toggleIcon from '../public/images/menu-burger-icon.svg';
 import closeIcon from '../public/images/close-icon.svg';
 import styles from '../styles/components/navigation.module.scss';
-import utilStyles from '../styles/utils.module.scss';
 import cn from 'classnames';
 
 function Navigation(): JSX.Element {
@@ -31,22 +30,25 @@ function Navigation(): JSX.Element {
         </li>
       </ul>
       <button className={styles.toggleButton} type="button">
-        <Image
-          className={cn(styles.toggleIcon, { [utilStyles.hidden]: isMenuOpen })}
-          src={toggleIcon}
-          alt="Иконка открытия меню"
-          width={28}
-          height={28}
-          onClick={handleNavMenuClick}
-        />
-        <Image
-          className={cn(styles.closeIcon, { [utilStyles.hidden]: !isMenuOpen })}
-          src={closeIcon}
-          alt="Иконка закрытия меню"
-          width={20}
-          height={21}
-          onClick={handleNavMenuClick}
-        />
+        {isMenuOpen ? (
+          <Image
+            className={styles.closeIcon}
+            src={closeIcon}
+            alt="Иконка закрытия меню"
+            width={20}
+            height={21}
+            onClick={handleNavMenuClick}
+          />
+        ) : (
+          <Image
+            className={styles.toggleIcon}
+            src={toggleIcon}
+            alt="Иконка открытия меню"
+            width={28}
+            height={28}
+            onClick={handleNavMenuClick}
+          />
+        )}
       </button>
     </nav>
   );

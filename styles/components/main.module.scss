@@ -27,20 +27,3 @@
     grid-template-columns: minmax(178px, 741px) 45px 44px;
   }
 }
-
-.settings {
-  display: flex;
-  justify-content:center;
-  align-items:center;
-}
-
-.settingsIcon {
-  width: 40px;
-  height: 40px;
-  vertical-align: middle;
-
-  @media (max-width: 610px) {
-    width: 24px;
-    height: 24px;
-  }
-}
