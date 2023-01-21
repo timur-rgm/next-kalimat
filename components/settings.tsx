@@ -3,7 +3,7 @@ import Image from 'next/image';
 import settingsIcon from '../public/images/settings-icon.svg';
 import styles from '../styles/components/settings.module.scss';
 
-function Settings() {
+function Settings(): JSX.Element {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleButtonClick = () => {

@@ -1,5 +1,6 @@
 import Input from './input';
 import Settings from './settings';
+import CardsList from './cardsList';
 import styles from '../styles/components/main.module.scss';
 
 function Main() {
@@ -10,6 +11,7 @@ function Main() {
           <Input />
           <Settings />
         </section>
+        <CardsList />
       </div>
     </main>
   );
