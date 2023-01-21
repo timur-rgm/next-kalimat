@@ -48,6 +48,13 @@ function Settings() {
               <label htmlFor="text">Поиск по всему тексту</label>
             </div>
           </fieldset>
+          <button
+            className={styles.completedButton}
+            type="button"
+            onClick={handleButtonClick}
+          >
+            Готово
+          </button>
         </form>
       )}
     </div>
