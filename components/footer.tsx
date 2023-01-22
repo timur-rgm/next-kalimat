@@ -1,6 +1,9 @@
 import FooterLogo from './footerLogo';
+import Social from './social';
 import Image from 'next/image';
-import logoImg from '../public/images/footer-logo.svg';
+import instaImg from '../public/images/insta-icon.svg';
+import telegramImg from '../public/images/telegram-icon.svg';
+import youtubeImg from '../public/images/youtube-icon.svg';
 import styles from '../styles/components/footer.module.scss';
 
 function Footer(): JSX.Element {
@@ -8,8 +11,7 @@ function Footer(): JSX.Element {
     <footer className={styles.root}>
       <div className={styles.wrapper}>
         <FooterLogo />
-
-        <div className={styles.socialsContainer}></div>
+        <Social />
 
         <div className={styles.footerMenuContainer}></div>
 

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import logoImg from '../public/images/footer-logo.svg';
-import styles from '../styles/components/footer.module.scss';
+import styles from '../styles/components/footerLogo.module.scss';
 
 function FooterLogo(): JSX.Element {
   return (

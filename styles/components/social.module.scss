@@ -1,0 +1,32 @@
+.root {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.list {
+  display: flex;
+  max-width: 400px;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.list img {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.instaIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.telegramIcon {
+  width: 28.35px;
+  height: 24px;
+}
+
+.youtubeIcon {
+  width: 31.69px;
+  height: 24px;
+}
