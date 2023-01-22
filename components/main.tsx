@@ -3,7 +3,7 @@ import Settings from './settings';
 import CardsList from './cardsList';
 import styles from '../styles/components/main.module.scss';
 
-function Main() {
+function Main(): JSX.Element {
   return (
     <main className={styles.root}>
       <div className={styles.wrapper}>
@@ -11,7 +11,9 @@ function Main() {
           <Input />
           <Settings />
         </section>
-        <CardsList />
+        <section className={styles.cardsContainer}>
+          <CardsList />
+        </section>
       </div>
     </main>
   );
