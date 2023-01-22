@@ -27,7 +27,7 @@
     padding: 32px;
   }
 
-  &+.card {
+  & + .card {
     margin-top: 20px;
   }
 }

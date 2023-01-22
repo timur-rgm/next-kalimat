@@ -30,4 +30,9 @@
 
 .cardsContainer {
   margin-top: 52px;
+  padding-bottom: 80px;
+
+  @media (max-width: 390px) {
+    padding-bottom: 52px;
+  }
 }

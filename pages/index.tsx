@@ -1,12 +1,13 @@
 import Header from '@/components/header';
 import Main from '@/components/main';
-import styles from '@/styles/home.module.scss';
+import Footer from '@/components/footer';
 
 export default function Home() {
   return (
     <>
       <Header />
       <Main />
+      <Footer />
     </>
   );
 }

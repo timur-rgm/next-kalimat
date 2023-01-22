@@ -1,0 +1,22 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+  max-width: 225px;
+}
+
+.logo {
+  width: 41px;
+  height: 62px;
+}
+
+.title h3 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+}
+
+.title p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+}
