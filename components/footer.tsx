@@ -1,6 +1,7 @@
 import FooterLogo from './footerLogo';
 import Social from './social';
 import FooterMenu from './footerMenu';
+import Copyright from './copyright';
 import Image from 'next/image';
 import styles from '../styles/components/footer.module.scss';
 
@@ -11,10 +12,7 @@ function Footer(): JSX.Element {
         <FooterLogo />
         <Social />
         <FooterMenu />
-
-        <div className={styles.footerMenuContainer}></div>
-
-        <div className={styles.copyright}></div>
+        <Copyright />
 
         <div className={styles.apps}></div>
       </div>
