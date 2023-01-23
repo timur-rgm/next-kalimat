@@ -2,7 +2,7 @@ import FooterLogo from './footerLogo';
 import Social from './social';
 import FooterMenu from './footerMenu';
 import Copyright from './copyright';
-import Image from 'next/image';
+import OurApps from './ourApps';
 import styles from '../styles/components/footer.module.scss';
 
 function Footer(): JSX.Element {
@@ -13,8 +13,7 @@ function Footer(): JSX.Element {
         <Social />
         <FooterMenu />
         <Copyright />
-
-        <div className={styles.apps}></div>
+        <OurApps />
       </div>
     </footer>
   );
