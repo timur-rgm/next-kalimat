@@ -1,16 +1,43 @@
+.root {
+  display: grid;
+  grid-column: 3/4;
+  grid-row: 2;
+  // margin-top: 26px;
+
+  @media (max-width: 955px) {
+    grid-column: 1;
+    grid-row: 5;
+  }
+}
+
 .list {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   max-width: 380px;
   list-style: none;
+
+  @media (max-width: 525px) {
+    max-width: 268px;
+  }
 }
 
 .appStoreIcon {
   width: 164px;
   height: 54px;
+
+  @media (max-width: 525px) {
+    width: 120px;
+    height: 40px;
+  }
 }
 
 .googlePlayIcon {
   width: 177px;
   height: 54px;
+
+  @media (max-width: 525px) {
+    width: 128px;
+    height: 40px;
+  }
 }

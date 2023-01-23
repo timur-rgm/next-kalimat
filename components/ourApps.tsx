@@ -5,7 +5,7 @@ import styles from '../styles/components/ourApps.module.scss';
 
 function OurApps(): JSX.Element {
   return (
-    <div>
+    <div className={styles.root}>
       <ul className={styles.list}>
         <li>
           <Image

@@ -2,21 +2,46 @@
   display: flex;
   justify-content: space-between;
   max-width: 225px;
+
+  @media (max-width: 955px) {
+    margin-bottom: 60px;
+  }
+  
+  @media (max-width: 525px) {
+    max-width: 188px;
+    margin-bottom: 34px;
+  }
 }
 
 .logo {
   width: 41px;
   height: 62px;
+
+  @media (max-width: 525px) {
+    width: 29px;
+    height: 54px;
+  }
 }
 
 .title h3 {
   font-size: 18px;
   font-weight: 500;
   line-height: 27px;
+
+  @media (max-width: 525px) {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
 }
 
 .title p {
   font-size: 14px;
   font-weight: 400;
   line-height: 21px;
+
+  @media (max-width: 525px) {
+    font-size: 12px;
+    line-height: 18px;
+  }
 }

@@ -7,6 +7,25 @@
 }
 
 .wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 100px;
   padding: 56px 20px;
+
+  @media (max-width: 1200px) {
+    column-gap: 30px;
+  }
+
+  @media (max-width: 955px) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 768px) {
+    padding: 56px 64px;
+  }
+
+  @media (max-width: 390px) {
+    padding: 40px 16px;
+  }
 }
 

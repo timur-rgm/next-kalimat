@@ -1,14 +1,55 @@
 .root {
+  display: grid;
+  grid-column: 1/2;
+  grid-row: 2;
   font-size: 18px;
   font-weight: 400;
   line-height: 18px;
+
+  @media (max-width: 955px) {
+    grid-column: 1;
+    grid-row: 2;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 525px) {
+    grid-row: 3;
+    font-size: 14px;
+    line-height: 21px;
+  }
 }
 
 .list {
   display: flex;
+  align-items: flex-end;
+  gap: 15px;
+  flex-wrap: wrap;
   max-width: 400px;
   justify-content: space-between;
   list-style: none;
+
+  @media (max-width: 1320px) {
+    display: block;
+  }
+
+  @media (max-width: 955px) {
+    display: flex;
+    max-width: 422px;
+  }
+}
+
+.list li {
+  @media (max-width: 1320px) {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  @media (max-width: 955px) {
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .list img {
@@ -19,14 +60,29 @@
 .instaIcon {
   width: 24px;
   height: 24px;
+
+  @media (max-width: 525px) {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .telegramIcon {
   width: 28.35px;
   height: 24px;
+
+  @media (max-width: 525px) {
+    width: 23px;
+    height: 20px;
+  }
 }
 
 .youtubeIcon {
   width: 31.69px;
   height: 24px;
+
+  @media (max-width: 525px) {
+    width: 26px;
+    height: 20px;
+  }
 }
