@@ -1,6 +1,7 @@
 import Input from './input';
 import Settings from './settings';
 import CardsList from './cardsList';
+import NotFound from './notFound';
 import styles from '../styles/components/main.module.scss';
 
 function Main(): JSX.Element {
@@ -12,7 +13,8 @@ function Main(): JSX.Element {
           <Settings />
         </section>
         <section className={styles.cardsContainer}>
-          <CardsList />
+          {/* <CardsList /> */}
+          <NotFound />
         </section>
       </div>
     </main>
