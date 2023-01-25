@@ -5,7 +5,7 @@ type LayoutPropsType = {
   children: JSX.Element;
 };
 
-function Layout({ children }: LayoutPropsType) {
+function Layout({ children }: LayoutPropsType): JSX.Element {
   return (
     <>
       <Header />

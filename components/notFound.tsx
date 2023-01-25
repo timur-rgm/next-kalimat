@@ -2,7 +2,7 @@ import Image from 'next/image';
 import laptopSearchImg from '../public/images/laptop-search-icon.svg';
 import styles from '../styles/components/notFound.module.scss';
 
-function NotFound() {
+function NotFound(): JSX.Element {
   return (
     <div className={styles.root}>
       <p className={styles.heading}>

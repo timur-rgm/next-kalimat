@@ -13,8 +13,8 @@ function Main(): JSX.Element {
           <Settings />
         </section>
         <section className={styles.cardsContainer}>
-          {/* <CardsList /> */}
-          <NotFound />
+          <CardsList />
+          {/* <NotFound /> */}
         </section>
       </div>
     </main>
