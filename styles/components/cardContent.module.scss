@@ -1,0 +1,110 @@
+.root {
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 20px;
+
+  @media (max-width: 768px) {
+    padding-right: 64px;
+    padding-left: 64px;
+  }
+
+  @media (max-width: 390px) {
+    padding: 20px 16px;
+  }
+}
+
+.extra {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+  margin-bottom: 45px;
+
+  @media (max-width: 390px) {
+    column-gap: 8px;
+    margin-bottom: 32px;
+  }
+}
+
+.extra dt {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+
+  @media (max-width: 390px) {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+.extra dd {
+  font-family: 'Amiri';
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+}
+
+.translationList {
+  list-style: none;
+}
+
+.translationList h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+
+  @media (max-width: 390px) {
+    font-size: 18px;
+    line-height: 27px;
+  }
+}
+
+.translationList h3 {
+  margin-bottom: 17px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+  }
+}
+
+.translationItem {
+  &:not(:last-child) {
+    margin-bottom: 40px;
+  } 
+}
+
+.exampleList {
+  list-style: none;
+}
+
+.exampleList li {
+  font-size: 24px;
+  line-height: 36px;
+  color: #888888;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.exampleArabic {
+  font-family: 'Amiri';
+  font-size: 24px;
+  line-height: 36px;
+  color: #000000;
+
+  @media (max-width: 768px) {
+    display: block;
+    margin-bottom: 12px;
+  }
+}
