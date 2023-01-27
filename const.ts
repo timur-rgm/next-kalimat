@@ -6,3 +6,9 @@ export enum Tabs {
   Interpretations = 'Толкования',
   Connections = 'Связи',
 }
+
+export const diacritics: any = {
+  a: 'А',
+  i: 'И',
+  u: 'У',
+};

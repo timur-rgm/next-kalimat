@@ -10,7 +10,7 @@ const initialState: ProcessState = {
 };
 
 export const processSlice = createSlice({
-  name: 'counter',
+  name: 'process',
   initialState,
   reducers: {
     setSearchValue: (state, action: PayloadAction<string>) => {

@@ -1,7 +1,9 @@
 .input {
   height: 67px;
   padding: 16px 175px 16px 25px;
+  font-family: 'Amiri';
   font-size: 24px;
+  font-weight: 700;
   line-height: 36px;
   background-color: #ffffff;
   border: 1px solid #e5e5e5;
@@ -18,7 +20,9 @@
   }
 
   &::placeholder {
+    font-family: 'Muller';
     font-size: 18px;
+    font-weight: 400;
 
     @media (max-width: 610px) {
       font-size: 14px;

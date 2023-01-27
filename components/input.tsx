@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setSearchValue } from '../store/process/slice';
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 import searchButtonIcon from '../public/images/search-button-icon.svg';
 import keyboardIcon from '../public/images/keyboard-icon.svg';
