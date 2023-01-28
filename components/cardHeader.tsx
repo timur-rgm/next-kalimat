@@ -1,13 +1,25 @@
-import { Tabs } from '@/const';
+import { Tabs, partsOfSpeech, diacritics } from '@/const';
 import styles from '@/styles/components/cardHeader.module.scss';
 
-function CardHeader(): JSX.Element {
+function CardHeader({ word }: any): JSX.Element {
   return (
     <header className={styles.root}>
-      <h1 className={styles.title}>كَتَبَ</h1>
+      <h1 className={styles.title}>{word.arabicText}</h1>
       <ul className={styles.categoryList}>
-        <li>Глагол (фи`ль)</li>
-        <li>1 порода, У</li>
+        <li>{partsOfSpeech[word.type]}</li>
+        {word.type === 'verb' && (
+          <li>
+            {word.additionalInfo.verbFormNumber} порода{' '}
+            {word.additionalInfo.mudariLetters.length !== 0 &&
+              `, ${
+                word.additionalInfo.mudariLetters[0].pastTime
+                  ? `${
+                      diacritics[word.additionalInfo.mudariLetters[0].pastTime]
+                    }/`
+                  : ''
+              }${diacritics[word.additionalInfo.mudariLetters[0].presentTime]}`}
+          </li>
+        )}
       </ul>
       <div className={styles.tabContainer}>
         <ul className={styles.tabList}>

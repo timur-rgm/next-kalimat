@@ -43,6 +43,13 @@
   line-height: 36px;
 }
 
+.or {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  color: #dadada;
+}
+
 .translationList {
   list-style: none;
 }
@@ -75,7 +82,7 @@
 .translationItem {
   &:not(:last-child) {
     margin-bottom: 40px;
-  } 
+  }
 }
 
 .exampleList {

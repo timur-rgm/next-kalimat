@@ -8,6 +8,7 @@ import keyboardIcon from '../public/images/keyboard-icon.svg';
 import styles from '../styles/components/input.module.scss';
 
 function Input() {
+  const router = useRouter();
   const [inputValue, setInputValue] = useState<string>('');
   const dispatch = useDispatch();
 
@@ -17,6 +18,9 @@ function Input() {
   
   const handleButtonClick = () => {
     dispatch(setSearchValue(inputValue));
+    inputValue
+      ? router.push(`/words?searchQuery=${inputValue}`)
+      : router.push(`/words`);
   };
 
   return (

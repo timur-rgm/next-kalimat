@@ -12,3 +12,9 @@ export const diacritics: any = {
   i: 'И',
   u: 'У',
 };
+
+export const partsOfSpeech: any = {
+  noun: 'Исм (имя)',
+  verb: 'Глагол (фи`ль)',
+  particle: 'Частица (харф)',
+};

@@ -1,48 +1,52 @@
+import React from 'react';
 import styles from '@/styles/components/cardContent.module.scss';
 
-function CardContent() {
+function CardContent({ word }: any) {
   return (
     <div className={styles.root}>
-      <dl className={styles.extra}>
-        <dt>Масдары:</dt>
-        <dd>كِتَابَةٌ</dd>
-      </dl>
+      {word.type === 'noun' && word.additionalInfo.pluralForms.length > 0 && (
+        <dl className={styles.extra}>
+          <dt>Мн:</dt>
+          {word.additionalInfo.pluralForms.map((item: any, i: number) => (
+            <React.Fragment key={item + i}>
+              {word.additionalInfo.pluralForms.length > 1 && i > 0 && (
+                <p className={styles.or}>или</p>
+              )}
+              <dd>{item}</dd>
+            </React.Fragment>
+          ))}
+        </dl>
+      )}
+      {word.type === 'verb' && word.additionalInfo.masdars.length > 0 && (
+        <dl className={styles.extra}>
+          <dt>Масдары:</dt>
+          {word.additionalInfo.masdars.map((item: any, i: number) => (
+            <React.Fragment key={item + i}>
+              {word.additionalInfo.masdars.length > 1 && i > 0 && (
+                <p className={styles.or}>или</p>
+              )}
+              <dd>{item}</dd>
+            </React.Fragment>
+          ))}
+        </dl>
+      )}
       <ul className={styles.translationList}>
         <h2>Переводы:</h2>
-        <li className={styles.translationItem}>
-          <h3>1{`)`} писать, составлять</h3>
-          <ul className={styles.exampleList}>
-            <li>
-              <span className={styles.exampleArabic}>كَتَبَ إِلَيْهِ</span> -
-              писать кому-либо
-            </li>
-            <li>
-              <span className={styles.exampleArabic}>كَتَبَ وَقَرَأَ</span> -
-              писать и читать, быть грамотным
-            </li>
-          </ul>
-        </li>
-        <li className={styles.translationItem}>
-          <h3>2{`)`} описывать (что عن)</h3>
-        </li>
-        <li className={styles.translationItem}>
-          <h3>3{`)`} письменно завещать (кому ل)</h3>
-        </li>
-        <li className={styles.translationItem}>
-          <h3>4{`)`} предписывать (кому على)</h3>
-          <ul className={styles.exampleList}>
-            <li>
-              <span className={styles.exampleArabic}>كُتِبَ لَهُ</span> - страд.
-              ему было суждено
-            </li>
-            <li>
-              <span className={styles.exampleArabic}>
-                كَتَبَتْ عَلَيْنَا الْأَقْدَارُ أَنْ
-              </span>{' '}
-              - ему было предписано, что...
-            </li>
-          </ul>
-        </li>
+        {word.translations.map((traslation: any, i: number) => (
+          <li className={styles.translationItem} key={traslation.text + i}>
+            <h3>{`${i + 1}) ${traslation.text}`}</h3>
+            <ul className={styles.exampleList}>
+              {traslation.samples.map((sample: any, i: number) => (
+                <li key={sample.translationText + i}>
+                  <span className={styles.exampleArabic}>
+                    {sample.arabicText}
+                  </span>{' '}
+                  - {sample.translationText}
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
       </ul>
     </div>
   );

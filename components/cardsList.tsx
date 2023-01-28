@@ -1,6 +1,7 @@
-import { getWords } from '@/store/data/selectors';
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { getWords } from '@/store/data/selectors';
+import Link from 'next/link';
 import { diacritics } from '../const';
 import styles from '../styles/components/cardsList.module.scss';
 
@@ -12,7 +13,9 @@ function CardsList(): JSX.Element {
       {words?.map((word: any) => (
         <li key={word.id} className={styles.card}>
           <header className={styles.header}>
-            <h3 className={styles.title}>{word.arabicText}</h3>
+            <Link href={`/words/${word.id}`} key={word.id}>
+              <h3 className={styles.title}>{word.arabicText}</h3>
+            </Link>
             {word.type === 'verb' && (
               <p className={styles.desc}>
                 {word.additionalInfo.verbFormNumber} порода{' '}
