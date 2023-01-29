@@ -5,9 +5,9 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import searchButtonIcon from '../public/images/search-button-icon.svg';
 import keyboardIcon from '../public/images/keyboard-icon.svg';
-import styles from '../styles/components/input.module.scss';
+import styles from '../styles/components/search.module.scss';
 
-function Input() {
+function Search() {
   const router = useRouter();
   const [inputValue, setInputValue] = useState<string>('');
   const dispatch = useDispatch();
@@ -15,7 +15,7 @@ function Input() {
   const handleInputChange = (value: string) => {
     setInputValue(value);
   };
-  
+
   const handleButtonClick = () => {
     dispatch(setSearchValue(inputValue));
     inputValue
@@ -38,7 +38,11 @@ function Input() {
         width={40}
         height={24}
       />
-      <button className={styles.button} type="button" onClick={handleButtonClick}>
+      <button
+        className={styles.button}
+        type="button"
+        onClick={handleButtonClick}
+      >
         <Image
           className={styles.buttonIcon}
           src={searchButtonIcon}
@@ -47,8 +51,12 @@ function Input() {
           height={24}
         />
       </button>
+      <p className={styles.randomQuery}>
+        Случайные запросы: <span className={styles.randomQueryArabic}>كتاب</span>{' '}
+        или книга
+      </p>
     </>
   );
 }
 
-export default Input;
+export default Search;

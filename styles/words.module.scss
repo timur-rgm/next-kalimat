@@ -1,9 +1,9 @@
-.root {
+.main {
   min-height: 500px;
   background-color: #f2f2f4;
 }
 
-.wrapper {
+.mainWrapper {
   padding: 60px 20px 0;
 
   @media (max-width: 768px) {
@@ -28,7 +28,7 @@
   }
 }
 
-.cardsContainer {
+.cardListContainer {
   margin-top: 52px;
   padding-bottom: 80px;
 

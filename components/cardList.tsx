@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { diacritics } from '../const';
 import styles from '../styles/components/cardsList.module.scss';
 
-function CardsList(): JSX.Element {
+function CardList(): JSX.Element {
   const { words } = useSelector(getWords);
 
   return (
@@ -75,4 +75,4 @@ function CardsList(): JSX.Element {
   );
 }
 
-export default CardsList;
+export default CardList;

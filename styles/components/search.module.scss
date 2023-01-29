@@ -19,6 +19,10 @@
     font-size: 14px;
   }
 
+  &:focus {
+    outline: none;
+  }
+
   &::placeholder {
     font-family: 'Muller';
     font-size: 18px;
@@ -68,4 +72,17 @@
   @media (max-width: 768px) {
     display: none;
   }
+}
+
+.randomQuery {
+  grid-row: 2;
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.randomQueryArabic {
+  font-family: 'Amiri';
+  font-size: 14px;
+  line-height: 21px;
 }

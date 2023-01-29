@@ -1,0 +1,82 @@
+.main {
+  min-height: 500px;
+  background-image: url('/images/smartphone-icon.svg'),
+    url('/images/monitor-icon.svg');
+  background-repeat: no-repeat;
+  background-size: 358px 389px, 471px 316px;
+  background-position: left -60px top 200px, right -30px top 485px;
+
+  background-color: #eef6ff;
+}
+
+.mainWrapper {
+  padding: 60px 20px 0;
+
+  @media (max-width: 768px) {
+    padding: 58px 64px 0;
+  }
+
+  @media (max-width: 390px) {
+    padding: 20px 16px 0;
+  }
+}
+
+.searchContainer {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(178px, 741px) 67px 60px;
+  justify-content: center;
+  max-width: 868px;
+  margin: 0 auto 84px;
+
+  @media (max-width: 610px) {
+    grid-template-columns: minmax(178px, 741px) 45px 44px;
+  }
+}
+
+.titleContainer {
+  max-width: 650px;
+  margin: 170px auto 46px;
+}
+
+.title {
+  margin-bottom: 8px;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 58px;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: center;
+  color: #888888;
+}
+
+.cardListContainer {
+  margin-top: 52px;
+  padding-bottom: 80px;
+
+  @media (max-width: 390px) {
+    padding-bottom: 52px;
+  }
+}
+
+.planButtonContainer {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.planButton {
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  text-align: center;
+  color: #54a0ff;
+  background-color: transparent;
+  border: 1px solid #54a0ff;
+  border-radius: 10px;
+}
