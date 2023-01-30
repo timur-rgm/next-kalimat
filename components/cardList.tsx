@@ -5,9 +5,7 @@ import Link from 'next/link';
 import { diacritics } from '../const';
 import styles from '../styles/components/cardsList.module.scss';
 
-function CardList(): JSX.Element {
-  const { words } = useSelector(getWords);
-
+function CardList({words}: any): JSX.Element {
   return (
     <ul className={styles.root}>
       {words?.map((word: any) => (
