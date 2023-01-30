@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import Logo from './logo';
 import Navigation from './navigation';
 import Authorization from './authorization';
@@ -7,15 +8,20 @@ import FooterMenu from './footerMenu';
 import Copyright from './copyright';
 import OurApps from './ourApps';
 import styles from '../styles/layout.module.scss';
+import cn from 'classnames';
 
 type LayoutPropsType = {
   children: JSX.Element;
 };
 
 function Layout({ children }: LayoutPropsType): JSX.Element {
+  const { pathname } = useRouter();
+
   return (
     <>
-      <header className={styles.header}>
+      <header
+        className={cn(styles.header, { [styles.headerBlue]: pathname === '/' })}
+      >
         <div className={styles.headerWrapper}>
           <Logo />
           <div className={styles.menuContainer}>
@@ -28,7 +34,9 @@ function Layout({ children }: LayoutPropsType): JSX.Element {
       <footer className={styles.footer}>
         <div className={styles.footerWrapper}>
           <FooterLogo />
-          <Social />
+          <div className={styles.socialContainer}>
+            <Social />
+          </div>
           <FooterMenu />
           <Copyright />
           <OurApps />

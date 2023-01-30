@@ -5,12 +5,45 @@
   background-repeat: no-repeat;
   background-size: 358px 389px, 471px 316px;
   background-position: left -60px top 200px, right -30px top 485px;
-
   background-color: #eef6ff;
+
+  @media (max-width: 1534px) {
+    background-position: left -60px top 500px, right -30px top 580px;
+  }
+
+  @media (max-width: 1190px) {
+    background-position: left -60px top 550px, right -30px top 580px;
+  }
+
+  @media (max-width: 910px) {
+    background-size: 206px 224px, 260px 174px;
+    background-position: left -60px top 600px, right -30px top 700px;
+  }
+
+  @media (max-width: 768px) {
+    background-position: left -60px top 550px, right -30px top 580px;
+  }
+
+  @media (max-width: 582px) {
+    background-size: 104px 114px, 144px 100px;
+    background-position: left -15px top 600px, right -30px top 700px;
+  }
+  
+  @media (max-width: 390px) {
+    background-position: left 0px top 400px, right -30px top 450px;
+  }
+  
+  @media (max-width: 325px) {
+    background-position: left 0px top 450px, right -30px top 510px;
+  }
 }
 
 .mainWrapper {
-  padding: 60px 20px 0;
+  position: relative;
+  max-width: 1625px;
+  margin: 0 auto;
+  padding: 60px 20px 8px;
+  border-bottom: 1px solid transparent;
 
   @media (max-width: 768px) {
     padding: 58px 64px 0;
@@ -24,19 +57,32 @@
 .searchContainer {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(178px, 741px) 67px 60px;
+  grid-template-columns: 1fr;
   justify-content: center;
   max-width: 868px;
   margin: 0 auto 84px;
 
-  @media (max-width: 610px) {
-    grid-template-columns: minmax(178px, 741px) 45px 44px;
+  @media (max-width: 768px) {
+    margin-bottom: 69px;
+  }
+
+  @media (max-width: 390px) {
+    margin-bottom: 40px;
   }
 }
 
 .titleContainer {
   max-width: 650px;
   margin: 170px auto 46px;
+
+  @media (max-width: 768px) {
+    max-width: 515px;
+    margin: 100px auto 40px;
+  }
+
+  @media (max-width: 390px) {
+    margin: 56px auto 26px;
+  }
 }
 
 .title {
@@ -45,6 +91,17 @@
   font-weight: 500;
   line-height: 58px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+    line-height: 54px;
+  }
+
+  @media (max-width: 390px) {
+    font-size: 24px;
+    line-height: 36px;
+    text-align: left;
+  }
 }
 
 .subtitle {
@@ -53,6 +110,17 @@
   line-height: 36px;
   text-align: center;
   color: #888888;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  @media (max-width: 390px) {
+    font-size: 14px;
+    line-height: 21px;
+    text-align: left;
+  }
 }
 
 .cardListContainer {
@@ -66,7 +134,16 @@
 
 .planButtonContainer {
   width: 200px;
-  margin: 0 auto;
+  margin: 0 auto 192px;
+
+  @media (max-width: 955px) {
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 390px) {
+    width: 151px;
+    margin-bottom: 20px;
+  }
 }
 
 .planButton {
@@ -79,4 +156,79 @@
   background-color: transparent;
   border: 1px solid #54a0ff;
   border-radius: 10px;
+
+  @media (max-width: 390px) {
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+}
+
+.socialContainer {
+  display: block;
+  max-width: 400px;
+  margin: 0 auto 88px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+
+  @media (max-width: 955px) {
+    grid-column: 1;
+    grid-row: 2;
+    margin-bottom: 61px;
+  }
+
+  @media (max-width: 525px) {
+    grid-row: 3;
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+.videoContainer {
+  position: absolute;
+  bottom: 70px;
+  display: flex;
+  width: 222px;
+  margin: 0 auto;
+  padding: 24px 28px;
+  background-color: #ffffff;
+  border: 1px solid #54a0ff;
+  border-radius: 15px;
+
+  @media (max-width: 955px) {
+    position: static;
+    display: block;
+    margin-bottom: 100px;
+    padding: 0;
+    text-align: center;
+    background: none;
+    border: none;
+  }  
+}
+
+.videoTitle {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+
+  @media (max-width: 955px) {
+    display: none;
+  }  
+}
+
+.videoIcon {
+  @media (max-width: 955px) {
+    display: none;
+  }
+}
+
+.videoTitleTablet {
+  display: none;
+
+  @media (max-width: 955px) {
+    display: inline;
+    border-bottom: 1px solid #000000;
+  }  
 }

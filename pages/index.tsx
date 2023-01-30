@@ -1,5 +1,7 @@
+import Image from 'next/image';
 import Search from '@/components/search';
 import Social from '@/components/social';
+import videoIcon from '@/public/images/video-play-icon.svg'
 import styles from '../styles/home.module.scss';
 
 function Home() {
@@ -25,7 +27,20 @@ function Home() {
             План обучения
           </button>
         </div>
-        <Social /> 
+        <div className={styles.videoContainer}>
+          <p className={styles.videoTitle}>Познакомьтесь с нами получше!</p>
+          <Image
+            className={styles.videoIcon}
+            src={videoIcon}
+            alt="Иконка воспроизведения видео"
+            width={40}
+            height={40}
+          />
+          <p className={styles.videoTitleTablet}>Видео о Kalimat</p>
+        </div>
+        <div className={styles.socialContainer}>
+          <Social />
+        </div>
       </div>
     </main>
   );

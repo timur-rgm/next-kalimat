@@ -25,6 +25,7 @@ function Search() {
 
   return (
     <>
+    <div className={styles.inputContainer}>
       <input
         className={styles.input}
         type="text"
@@ -34,7 +35,7 @@ function Search() {
       <Image
         className={styles.keyboardIcon}
         src={keyboardIcon}
-        alt="Иконка открытия меню"
+        alt="Иконка клавиатуры"
         width={40}
         height={24}
       />
@@ -46,11 +47,12 @@ function Search() {
         <Image
           className={styles.buttonIcon}
           src={searchButtonIcon}
-          alt="Иконка открытия меню"
+          alt="Кнопка поиска"
           width={24}
           height={24}
         />
       </button>
+    </div>
       <p className={styles.randomQuery}>
         Случайные запросы: <span className={styles.randomQueryArabic}>كتاب</span>{' '}
         или книга

@@ -1,5 +1,10 @@
+.inputContainer {
+  position: relative;
+}
+
 .input {
   height: 67px;
+  width: 100%;
   padding: 16px 175px 16px 25px;
   font-family: 'Amiri';
   font-size: 24px;
@@ -35,8 +40,8 @@
 }
 
 .button {
-  position: relative;
-  left: -5px;
+  position: absolute;
+  right: 0;
   width: 67px;
   height: 67px;
   text-align: center;
@@ -65,7 +70,7 @@
 .keyboardIcon {
   position: absolute;
   top: 24px;
-  right: 160px;
+  right: 100px;
   width: 40px;
   height: 24px;
 
