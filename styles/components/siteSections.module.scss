@@ -48,6 +48,18 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   list-style: none;
+
+  @media (max-width: 1250px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 1015px) {
+    row-gap: 50px;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .item {
@@ -55,35 +67,13 @@
   padding: 40px 32px;
   padding-left: 137px;
   text-align: left;
-  background: #ffffff;
-  background-size: 80px 80px;
-  background-position: 32px 50%;
-  background-repeat: no-repeat;
+  background-color: #ffffff;
   box-shadow: 0px 4px 40px rgba(185, 185, 185, 0.2);
   border-radius: 20px;
 
-  &.dictionary {
-    background-image: url('/images/sections-book-icon.svg');
-  }
-
-  &.library {
-    background-image: url('/images/sections-books-icon.svg');
-  }
-
-  &.quran {
-    background-image: url('/images/sections-quran-icon.svg');
-  }
-
-  &.courses {
-    background-image: url('/images/sections-play-icon.svg');
-  }
-
-  &.liveСourses {
-    background-image: url('/images/sections-video-chat-icon.svg');
-  }
-
-  &.handbook {
-    background-image: url('/images/sections-arabic-art-icon.svg');
+  @media (max-width: 1015px) {
+    padding: 20px;
+    padding-top: 38px;
   }
 
   &.isSoon ::after {
@@ -106,6 +96,11 @@
   font-size: 24px;
   font-weight: 500;
   line-height: 36px;
+
+  @media (max-width: 1015px) {
+    font-size: 18px;
+    line-height: 27px;
+  }
 }
 
 .item p {
@@ -113,4 +108,19 @@
   font-weight: 400;
   line-height: 21px;
   color: #888888;
+}
+
+.icon {
+  position: absolute;
+  top: calc(50% - 40px);
+  left: 32px;
+  width: 80px;
+  height: 80px;
+
+  @media (max-width: 1015px) {
+    top: -30px;
+    left: calc(50% - 30px);
+    width: 60px;
+    height: 60px;
+  }
 }

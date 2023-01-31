@@ -1,3 +1,10 @@
+import Image from 'next/image';
+import bookIcon from '@/public/images/sections-book-icon.svg';
+import booksIcon from '@/public/images/sections-books-icon.svg';
+import quranIcon from '@/public/images/sections-quran-icon.svg';
+import playIcon from '@/public/images/sections-play-icon.svg';
+import videoChatIcon from '@/public/images/sections-video-chat-icon.svg';
+import arabicArtIcon from '@/public/images/sections-arabic-art-icon.svg';
 import styles from '@/styles/components/siteSections.module.scss';
 import cn from 'classnames';
 
@@ -6,7 +13,14 @@ function SiteSections() {
     <div className={styles.wrapper}>
       <h2 className={styles.title}>Разделы сайта</h2>
       <ul className={styles.list}>
-        <li className={cn(styles.item, styles.dictionary)}>
+        <li className={styles.item}>
+          <Image
+            className={styles.icon}
+            src={bookIcon}
+            alt="Иконка книжки"
+            width={80}
+            height={80}
+          />
           <h3>Словарь</h3>
           <p>
             Современный словарь на базе известного арабско-русского словаря
@@ -14,7 +28,14 @@ function SiteSections() {
             использования слова, спряжение и т. д.
           </p>
         </li>
-        <li className={cn(styles.item, styles.library)}>
+        <li className={styles.item}>
+          <Image
+            className={styles.icon}
+            src={booksIcon}
+            alt="Иконка книжкек"
+            width={80}
+            height={80}
+          />
           <h3>Библиотека</h3>
           <p>
             Большое количество практического материала: книги на арабском с
@@ -22,14 +43,28 @@ function SiteSections() {
             многое другое.
           </p>
         </li>
-        <li className={cn(styles.item, styles.quran, styles.isSoon)}>
+        <li className={cn(styles.item, styles.isSoon)}>
+          <Image
+            className={styles.icon}
+            src={quranIcon}
+            alt="Иконка Коран"
+            width={80}
+            height={80}
+          />
           <h3>Коран</h3>
           <p>
             Глубокое погружение в языковую, а также смысловую сторону Корана,
             чтобы понять его красоту
           </p>
         </li>
-        <li className={cn(styles.item, styles.courses)}>
+        <li className={styles.item}>
+          <Image
+            className={styles.icon}
+            src={playIcon}
+            alt="Иконка воспроизвести"
+            width={80}
+            height={80}
+          />
           <h3>Курсы</h3>
           <p>
             Уроки по грамматике, морфологии и красноречию арабского языка в
@@ -37,14 +72,28 @@ function SiteSections() {
             текстами.
           </p>
         </li>
-        <li className={cn(styles.item, styles.liveСourses, styles.isSoon)}>
+        <li className={cn(styles.item, styles.isSoon)}>
+          <Image
+            className={styles.icon}
+            src={videoChatIcon}
+            alt="Иконка с видео-чатом"
+            width={80}
+            height={80}
+          />
           <h3>Живые курсы</h3>
           <p>
             Групповые занятия с профессиональными преподавателями для братьев и
             сестёр: онлайн-уроки, проверка полученных знаний, экзамены
           </p>
         </li>
-        <li className={cn(styles.item, styles.handbook, styles.isSoon)}>
+        <li className={cn(styles.item, styles.isSoon)}>
+          <Image
+            className={styles.icon}
+            src={arabicArtIcon}
+            alt="Иконка c арабским узором"
+            width={80}
+            height={80}
+          />
           <h3>Справочник по грамматике</h3>
           <p>
             Здесь мы собрали и структурировали информацию обо всех аспектах
