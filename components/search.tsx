@@ -1,25 +1,18 @@
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { setSearchValue } from '../store/process/slice';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import Image from 'next/image';
 import searchButtonIcon from '../public/images/search-button-icon.svg';
 import keyboardIcon from '../public/images/keyboard-icon.svg';
 import styles from '../styles/components/search.module.scss';
-import { useSelector } from 'react-redux';
-import { getSearchValue } from '@/store/process/selectors';
-import Link from 'next/link';
 
 function Search({ query }: any) {
-  const router = useRouter();
-
   const [inputValue, setInputValue] = useState<string>('');
 
-  const searchValue = useSelector(getSearchValue);
-  const dispatch = useDispatch();
+  const router = useRouter();
 
   useEffect(() => {
-    setInputValue(searchValue);
+    setInputValue(router.query.searchQuery as string);
   }, []);
 
   const handleInputChange = (value: string) => {
@@ -27,7 +20,6 @@ function Search({ query }: any) {
   };
 
   const handleButtonClick = () => {
-    dispatch(setSearchValue(inputValue));
     inputValue
       ? router.push(`/words?searchQuery=${inputValue}`)
       : router.push(`/words`);
