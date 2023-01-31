@@ -1,14 +1,13 @@
 .wrapper {
   max-width: 1625px;
   margin: 0 auto;
-  padding: 100px 20px 80px;
+  padding: 100px 20px 60px;
 
   @media (max-width: 768px) {
-    padding: 60px 64px 80px;
+    padding: 60px 64px 60px;
   }
 
   @media (max-width: 390px) {
-    padding: 60px 64px 80px;
     padding: 40px 16px 80px;
   }
 }
@@ -23,13 +22,13 @@
   text-align: center;
 
   @media (max-width: 768px) {
-    margin-bottom: 48px;
+    margin-bottom: 78px;
     font-size: 24px;
     line-height: 36px;
   }
 
   @media (max-width: 768px) {
-    margin-bottom: 40px;
+    margin-bottom: 70px;
   }
 
   &::after {
@@ -76,6 +75,11 @@
     padding-top: 38px;
   }
 
+  @media (max-width: 368px) {
+    padding: 28px;
+    padding-top: 38px;
+  }
+
   &.isSoon ::after {
     content: 'Скоро';
     position: absolute;
@@ -88,6 +92,11 @@
     color: #ffffff;
     background-color: #d64541;
     border-radius: 20px;
+
+    @media (max-width: 480px) {
+      top: 12px;
+      right: 12px;
+    }
   }
 }
 
