@@ -1,8 +1,3 @@
-import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { fetchWords } from '@/store/data/async';
-import { getSearchValue } from '@/store/process/selectors';
-import { useAppDispatch } from '@/store/store';
 import Search from '@/components/search';
 import Settings from '@/components/settings';
 import CardList from '@/components/cardList';

@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import Search from '@/components/search';
 import Social from '@/components/social';
-import videoIcon from '@/public/images/video-play-icon.svg'
+import SiteSections from '@/components/siteSections';
+import videoIcon from '@/public/images/video-play-icon.svg';
 import styles from '../styles/home.module.scss';
 
 function Home() {
@@ -42,6 +43,9 @@ function Home() {
           <Social />
         </div>
       </div>
+      <section className={styles.siteSectionsContainer}>
+        <SiteSections />
+      </section>
     </main>
   );
 }

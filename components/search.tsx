@@ -66,7 +66,10 @@ function Search({ query }: any) {
       </div>
       <p className={styles.randomQuery}>
         Случайные запросы:{' '}
-        <Link href="/words?searchQuery=كتاب"><span className={styles.randomQueryArabic}>كتاب</span></Link> или книга
+        <Link href="/words?searchQuery=كتاب">
+          <span className={styles.randomQueryArabic}>كتاب</span>
+        </Link>{' '}
+        или книга
       </p>
     </>
   );

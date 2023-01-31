@@ -4,7 +4,7 @@
     url('/images/monitor-icon.svg');
   background-repeat: no-repeat;
   background-size: 358px 389px, 471px 316px;
-  background-position: left -60px top 200px, right -40px top 500px;
+  background-position: left -60px top 200px, right -80px top 550px;
   background-color: #eef6ff;
 
   @media (max-width: 1534px) {
@@ -34,7 +34,7 @@
   }
   
   @media (max-width: 325px) {
-    background-position: left 0px top 450px, right -30px top 510px;
+    background-position: left 0px top 450px, right -30px top 520px;
   }
 }
 
@@ -187,9 +187,10 @@
 }
 
 .videoContainer {
+  display: none;
   position: absolute;
   bottom: 70px;
-  display: flex;
+  // display: flex;
   width: 222px;
   margin: 0 auto;
   padding: 24px 28px;
@@ -231,4 +232,9 @@
     display: inline;
     border-bottom: 1px solid #000000;
   }  
+}
+
+.siteSectionsContainer{
+  text-align: center;
+  background-color: #ffffff;
 }
