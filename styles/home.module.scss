@@ -28,11 +28,11 @@
     background-size: 104px 114px, 144px 100px;
     background-position: left -15px top 600px, right -30px top 700px;
   }
-  
+
   @media (max-width: 390px) {
     background-position: left 0px top 400px, right -30px top 450px;
   }
-  
+
   @media (max-width: 325px) {
     background-position: left 0px top 450px, right -30px top 520px;
   }
@@ -206,7 +206,7 @@
     text-align: center;
     background: none;
     border: none;
-  }  
+  }
 }
 
 .videoTitle {
@@ -216,7 +216,7 @@
 
   @media (max-width: 955px) {
     display: none;
-  }  
+  }
 }
 
 .videoIcon {
@@ -231,10 +231,10 @@
   @media (max-width: 955px) {
     display: inline;
     border-bottom: 1px solid #000000;
-  }  
+  }
 }
 
-.siteSectionsContainer{
+.siteSectionsContainer {
   text-align: center;
   background-color: #ffffff;
 }
