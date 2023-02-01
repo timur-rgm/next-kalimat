@@ -1,15 +1,29 @@
 .root {
   position: absolute;
   top: 75px;
-  left: -60px;
+  left: -106px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   row-gap: 4px;
-  width: 1000px;
+  width: 1082px;
   padding: 36px 20px;
   background-color: #ffffff;
   box-shadow: 0 0 24px rgba(81, 81, 81, 0.1);
+
+  @media (max-width: 1110px) {
+    width: 900px;
+    left: -16px;
+  }
+
+  @media (max-width: 911px) {
+    width: 768px;
+    left: calc(50% - 350px);
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .row {
@@ -21,41 +35,63 @@
 .button {
   width: 60px;
   height: 60px;
-  font-family: 'Amiri';
+  font-family: 'Kitab';
   font-size: 25px;
+  font-weight: 400;
   line-height: 32px;
-  background: #ffffff;
+  background-color: #ffffff;
   border: 1px solid hsla(0, 0%, 85%, 0.5);
   border-radius: 10px;
+  box-shadow: 0 0 5px hsla(0,0%,53%,.25);
   cursor: pointer;
+
+  &:hover {
+    background-color: #cce3ff;
+    border: 1px solid #54a0ff;
+  }
 }
 
 .clearButton {
+  flex-shrink: 2;
   width: 150px;
   font-family: 'Muller';
   font-size: 18px;
+
+  @media (max-width: 911px) {
+    font-size: 16px;
+  }
 }
 
 .tabButton {
+  flex-shrink: 2;
   width: 150px;
 }
 
 .capsButton {
+  flex-shrink: 2;
   width: 170px;
 }
 
 .searchButton {
+  flex-shrink: 2;
   width: 108px;
   font-family: 'Muller';
   font-size: 18px;
 }
 
 .leftShiftButton {
+  flex-shrink: 2;
   width: 150px;
   font-family: 'Muller';
   font-size: 18px;
+
+  &.pressed {
+    background-color: #cce3ff;
+    border: 1px solid #54a0ff;
+  }
 }
 
 .rightShiftButton {
+  flex-shrink: 2;
   width: 128px;
 }

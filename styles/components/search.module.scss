@@ -68,17 +68,25 @@
   }
 }
 
-.keyboardIcon {
+.keyboardIconContainer {
   position: absolute;
   top: 24px;
   right: 100px;
-  width: 40px;
-  height: 24px;
+  color: #888888;
   cursor: pointer;
 
   @media (max-width: 768px) {
     display: none;
   }
+
+  &.open {
+    color: #54a0ff;
+  }
+}
+
+.keyboardIcon {
+  width: 40px;
+  height: 24px;
 }
 
 .randomQuery {

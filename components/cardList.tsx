@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { diacritics } from '../const';
 import styles from '../styles/components/cardsList.module.scss';
 
-function CardList({words}: any): JSX.Element {
+function CardList({ words }: any): JSX.Element {
   return (
     <ul className={styles.root}>
       {words?.map((word: any) => (
@@ -60,9 +60,9 @@ function CardList({words}: any): JSX.Element {
             </dl>
           )}
           <ul className={styles.translationsList}>
-            {word.translations.map((traslation: any) => (
+            {word.translations.map((traslation: any, i: number) => (
               <li key={traslation.id}>
-                {traslation.sortOrder}
+                {i + 1}
                 {`)`} {traslation.text}
               </li>
             ))}

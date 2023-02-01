@@ -24,6 +24,14 @@
        local('Muller Bold'), local('Muller-Bold'), url('../public/fonts/MullerBold.woff2') format('woff'),
 }
 
+@font-face {
+  font-family: 'Kitab';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Kitab Regular'), local('Kitab-Regular'), url('../public/fonts/KitabRegular.woff2') format('woff2'),
+       local('Kitab Regular'), local('Kitab-Regular'), url('../public/fonts/KitabRegular.woff2') format('woff'),
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

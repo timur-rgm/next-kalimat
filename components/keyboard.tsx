@@ -23,7 +23,7 @@ function Keyboard({
   return (
     <div className={styles.root}>
       <div className={styles.row}>
-        {isShiftPressed
+        {!isShiftPressed
           ? keyboardLetters.firstRow.map((letter, i) => (
               <button
                 className={styles.button}
@@ -51,7 +51,7 @@ function Keyboard({
       </div>
       <div className={styles.row}>
         <button className={cn(styles.button, styles.tabButton)}></button>
-        {isShiftPressed
+        {!isShiftPressed
           ? keyboardLetters.secondRow.map((letter, i) => (
               <button
                 className={styles.button}
@@ -73,7 +73,7 @@ function Keyboard({
       </div>
       <div className={styles.row}>
         <button className={cn(styles.button, styles.capsButton)}></button>
-        {isShiftPressed
+        {!isShiftPressed
           ? keyboardLetters.thirdRow.map((letter, i) => (
               <button
                 className={styles.button}
@@ -101,12 +101,14 @@ function Keyboard({
       </div>
       <div className={styles.row}>
         <button
-          className={cn(styles.button, styles.leftShiftButton)}
+          className={cn(styles.button, styles.leftShiftButton, {
+            [styles.pressed]: isShiftPressed,
+          })}
           onClick={handleShiftButtonClick}
         >
           Shift
         </button>
-        {isShiftPressed
+        {!isShiftPressed
           ? keyboardLetters.fourthRow.map((letter, i) => (
               <button
                 className={styles.button}
@@ -125,10 +127,7 @@ function Keyboard({
                 {letter}
               </button>
             ))}
-        <button
-          className={cn(styles.button, styles.rightShiftButton)}
-          onClick={onSearchButtonClick}
-        ></button>
+        <button className={cn(styles.button, styles.rightShiftButton)}></button>
       </div>
     </div>
   );
