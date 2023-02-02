@@ -4,17 +4,18 @@ import CardList from '@/components/cardList';
 import NotFound from '@/components/notFound';
 import styles from '@/styles/words.module.scss';
 
-export default function Words({words, query}: any) {
+export default function Words({ words, query }: any) {
+  const wordsCount = words?.length;
+
   return (
     <main className={styles.main}>
       <div className={styles.mainWrapper}>
         <section className={styles.searchContainer}>
-          <Search query={query}/>
+          <Search query={query} count={wordsCount} />
           <Settings />
         </section>
         <section className={styles.cardListContainer}>
-          <CardList words={words}/>
-          {/* <NotFound /> */}
+          {wordsCount > 0 ? <CardList words={words} /> : <NotFound />}
         </section>
       </div>
     </main>

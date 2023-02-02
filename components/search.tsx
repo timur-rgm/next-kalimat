@@ -7,7 +7,7 @@ import searchButtonIcon from '../public/images/search-button-icon.svg';
 import styles from '../styles/components/search.module.scss';
 import cn from 'classnames';
 
-function Search({ query }: any) {
+function Search({ query, count }: any) {
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   const [isKeyboardOpen, setIsKeyboardOpen] = useState<boolean>(false);
@@ -93,13 +93,19 @@ function Search({ query }: any) {
           />
         </button>
       </div>
-      <p className={styles.randomQuery}>
-        Случайные запросы:{' '}
-        <Link href="/words?searchQuery=كتاب">
-          <span className={styles.randomQueryArabic}>كتاب</span>
-        </Link>{' '}
-        или книга
-      </p>
+      {router.pathname === '/words' ? (
+        <p className={styles.foundCount}>
+          Количество совпадений: {count ? count : 0}
+        </p>
+      ) : (
+        <p className={styles.randomQuery}>
+          Случайные запросы:{' '}
+          <Link href="/words?searchQuery=كتاب">
+            <span className={styles.randomQueryArabic}>كتاب</span>
+          </Link>{' '}
+          или книга
+        </p>
+      )}
     </>
   );
 }
