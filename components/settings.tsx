@@ -25,7 +25,7 @@ function Settings(): JSX.Element {
           <fieldset className={styles.arabicSettings}>
             <legend>Арабский</legend>
             <div>
-              <input type="radio" id="exact" name="arabic" />
+              <input type="radio" id="exact" name="arabic" defaultChecked />
               <label htmlFor="exact">Точное совпадение</label>
             </div>
             <div>
@@ -40,7 +40,7 @@ function Settings(): JSX.Element {
           <fieldset className={styles.translationSettings}>
             <legend>Перевод</legend>
             <div>
-              <input type="radio" id="keywords" name="translation" />
+              <input type="radio" id="keywords" name="translation" defaultChecked />
               <label htmlFor="keywords">Только по ключевым словам</label>
             </div>
             <div>
