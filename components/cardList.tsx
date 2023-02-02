@@ -14,7 +14,7 @@ function CardList({ words }: any): JSX.Element {
             <Link href={`/words/${word.id}`} key={word.id}>
               <h3 className={styles.title}>{word.arabicText}</h3>
             </Link>
-            {word.type === 'verb' && (
+            {word.type === 'verb' && word.additionalInfo && (
               <p className={styles.desc}>
                 {word.additionalInfo.verbFormNumber} порода{' '}
                 {word.additionalInfo.mudariLetters.length !== 0 &&
@@ -32,7 +32,7 @@ function CardList({ words }: any): JSX.Element {
               </p>
             )}
           </header>
-          {word.type === 'noun' &&
+          {word.type === 'noun' && word.additionalInfo &&
             word.additionalInfo.pluralForms.length > 0 && (
               <dl className={styles.extra}>
                 <dt>Мн:</dt>
@@ -46,7 +46,7 @@ function CardList({ words }: any): JSX.Element {
                 ))}
               </dl>
             )}
-          {word.type === 'verb' && word.additionalInfo.masdars.length > 0 && (
+          {word.type === 'verb' && word.additionalInfo && word.additionalInfo.masdars.length > 0 && (
             <dl className={styles.extra}>
               <dt>Масдары:</dt>
               {word.additionalInfo.masdars.map((item: any, i: number) => (

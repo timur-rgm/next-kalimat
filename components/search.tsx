@@ -48,6 +48,7 @@ function Search({ query }: any) {
           type="text"
           placeholder="Введите слово"
           ref={inputRef}
+          dir="auto"
         />
         <div
           className={cn(styles.keyboardIconContainer, {
