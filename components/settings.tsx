@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
+import ModalSettings from './modalSettings';
 import settingsIcon from '../public/images/settings-icon.svg';
 import styles from '../styles/components/settings.module.scss';
 
@@ -40,7 +41,12 @@ function Settings(): JSX.Element {
           <fieldset className={styles.translationSettings}>
             <legend>Перевод</legend>
             <div>
-              <input type="radio" id="keywords" name="translation" defaultChecked />
+              <input
+                type="radio"
+                id="keywords"
+                name="translation"
+                defaultChecked
+              />
               <label htmlFor="keywords">Только по ключевым словам</label>
             </div>
             <div>
@@ -48,15 +54,9 @@ function Settings(): JSX.Element {
               <label htmlFor="text">Поиск по всему тексту</label>
             </div>
           </fieldset>
-          <button
-            className={styles.completedButton}
-            type="button"
-            onClick={handleButtonClick}
-          >
-            Готово
-          </button>
         </form>
       )}
+      {isOpen && <ModalSettings onButtonClick={handleButtonClick}/>}
     </div>
   );
 }

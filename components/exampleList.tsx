@@ -26,6 +26,7 @@ function ExampleList({ traslation }: any) {
             [styles.closed]: !isMoreButtonPressed,
             [styles.opened]: isMoreButtonPressed,
           })}
+          key={sample + i}
         >
           <span className={styles.arabic}>{sample.arabicText}</span> -{' '}
           {sample.translationText}
