@@ -1,0 +1,68 @@
+.root {
+  list-style: none;
+}
+
+.item {
+  font-size: 24px;
+  line-height: 36px;
+  color: #888888;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  &.closed {
+    margin-bottom: 0;
+    opacity: 0;
+    height: 0;
+    transform: translateY(-50px);
+    transition: all 0.3s ease;
+  }
+
+  &.opened {
+    opacity: 1;
+    height: auto;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+  }
+}
+
+.arabic {
+  font-family: 'Amiri';
+  font-size: 24px;
+  line-height: 36px;
+  color: #000000;
+
+  @media (max-width: 768px) {
+    display: block;
+    margin-bottom: 12px;
+  }
+}
+
+.moreButton {
+  position: relative;
+  padding: 16px 37px 16px 20px;
+  font-family: 'Muller';
+  font-size: 18px;
+  line-height: 27px;
+  color: #54a0ff;
+  background-color: #ddecff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.arrowIcon {
+  position: absolute;
+  top: 18px;
+  right: 15px;
+
+  &.inverted {
+    transform: rotate(180deg);
+  }
+}

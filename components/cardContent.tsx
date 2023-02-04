@@ -1,4 +1,5 @@
 import React from 'react';
+import ExampleList from './exampleList';
 import styles from '@/styles/components/cardContent.module.scss';
 
 function CardContent({ word }: any) {
@@ -35,16 +36,7 @@ function CardContent({ word }: any) {
         {word.translations.map((traslation: any, i: number) => (
           <li className={styles.translationItem} key={traslation.text + i}>
             <h3>{`${i + 1}) ${traslation.text}`}</h3>
-            <ul className={styles.exampleList}>
-              {traslation.samples.map((sample: any, i: number) => (
-                <li key={sample.translationText + i}>
-                  <span className={styles.exampleArabic}>
-                    {sample.arabicText}
-                  </span>{' '}
-                  - {sample.translationText}
-                </li>
-              ))}
-            </ul>
+            <ExampleList traslation={traslation} />
           </li>
         ))}
       </ul>
