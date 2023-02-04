@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import Image from 'next/image';
+import ModalMenu from './modalMenu';
 import helpIcon from '../public/images/help-icon.svg';
 import toggleIcon from '../public/images/menu-burger-icon.svg';
 import closeIcon from '../public/images/close-icon.svg';
 import styles from '../styles/components/navigation.module.scss';
-import cn from 'classnames';
 
 function Navigation(): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -15,7 +15,7 @@ function Navigation(): JSX.Element {
 
   return (
     <nav className={styles.root}>
-      <ul className={cn(styles.list, { [styles.listOpened]: isMenuOpen })}>
+      <ul className={styles.list}>
         <li>Библиотека</li>
         <li>Курсы</li>
         <li>Разделы</li>
@@ -50,6 +50,7 @@ function Navigation(): JSX.Element {
           />
         )}
       </button>
+      {isMenuOpen && <ModalMenu onCloseIconClick={handleNavMenuClick} />}
     </nav>
   );
 }

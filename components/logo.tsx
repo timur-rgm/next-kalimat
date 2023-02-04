@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from '../styles/components/logo.module.scss';
 import logoImg from '../public/images/logo.svg';
+import styles from '../styles/components/logo.module.scss';
 
 function Logo(): JSX.Element {
   return (

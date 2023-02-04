@@ -20,45 +20,6 @@
   }
 }
 
-.listOpened {
-  @media (max-width: 768px) {
-    position: absolute;
-    top: 69px;
-    left: 0;
-    display: block;
-    width: 100%;
-    padding-left: 64px;
-    background-color: #ffffff;
-  }
-  
-  @media (max-width: 390px) {
-    position: absolute;
-    display: block;
-    width: 100%;
-    padding-left: 16px;
-  }
-}
-
-.list li {
-  @media (max-width: 768px) {
-    &:last-child {
-      display: none;
-    }
-  }
-}
-
-.listOpened li {
-  @media (max-width: 768px) {
-    &:first-child {
-      margin-top: 15px;
-    }
-
-    &:not(last-child) {
-      margin-bottom: 15px;
-    }
-  }
-}
-
 .helpIcon {
   width: 24px;
   height: 24px;
