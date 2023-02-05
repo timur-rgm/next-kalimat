@@ -1,9 +1,7 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { getWords } from '@/store/data/selectors';
+import React from 'react';;
 import Link from 'next/link';
 import { diacritics } from '../const';
-import styles from '../styles/components/cardsList.module.scss';
+import styles from '../styles/components/cardList.module.scss';
 
 function CardList({ words }: any): JSX.Element {
   return (
