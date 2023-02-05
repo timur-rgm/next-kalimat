@@ -8,7 +8,7 @@ import styles from '../styles/components/search.module.scss';
 import cn from 'classnames';
 
 function Search({ query, count }: any) {
-  const inputRef = useRef<HTMLInputElement | null>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const [isKeyboardOpen, setIsKeyboardOpen] = useState<boolean>(false);
 
@@ -27,8 +27,15 @@ function Search({ query, count }: any) {
 
   const handleKeyboardButtonClick = (letter: string) => {
     if (inputRef.current) {
-      inputRef.current.value = inputRef.current.value + letter;
-      inputRef.current?.focus();
+      let cursorPositionValue = 0;
+
+      if (inputRef.current.selectionStart !== null) {
+        cursorPositionValue = inputRef.current.selectionStart + 1;
+      }
+
+      inputRef.current.setRangeText(letter);
+      inputRef.current.selectionStart = inputRef.current.selectionEnd = cursorPositionValue;
+      inputRef.current.focus();
     }
   };
 
