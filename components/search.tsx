@@ -18,18 +18,27 @@ function Search({ value, count }: any) {
   const dispatch = useDispatch();
 
   const handleSearchButtonClick = () => {
-    inputRef.current?.value &&
+    if (inputRef.current?.value) {
       dispatch(setSearchValue(inputRef.current?.value));
 
-    inputRef.current?.value
-      ? router.push({
-          pathname: '/words',
-          query: {
-            searchQuery: inputRef.current?.value,
-            modeArabic: modeArabic,
-          },
-        })
-      : router.push(`/words`);
+      modeArabic
+        ? router.push({
+            pathname: '/words',
+            query: {
+              searchQuery: inputRef.current?.value,
+              modeArabic: modeArabic,
+            },
+          })
+        : router.push({
+            pathname: '/words',
+            query: {
+              searchQuery: inputRef.current?.value,
+            },
+          });
+    } else {
+      router.push(`/words`);
+    }
+    
     setIsKeyboardOpen(false);
   };
 
