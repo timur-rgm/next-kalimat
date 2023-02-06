@@ -1,4 +1,7 @@
 import { useRef, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setSearchValue } from '@/store/process/slice';
+import { getModeArabic } from '@/store/process/selectors';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -7,16 +10,25 @@ import searchButtonIcon from '../public/images/search-button-icon.svg';
 import styles from '../styles/components/search.module.scss';
 import cn from 'classnames';
 
-function Search({ query, count }: any) {
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  const [isKeyboardOpen, setIsKeyboardOpen] = useState<boolean>(false);
-
+function Search({ value, count }: any) {
   const router = useRouter();
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [isKeyboardOpen, setIsKeyboardOpen] = useState<boolean>(false);
+  const modeArabic = useSelector(getModeArabic);
+  const dispatch = useDispatch();
 
   const handleSearchButtonClick = () => {
+    inputRef.current?.value &&
+      dispatch(setSearchValue(inputRef.current?.value));
+
     inputRef.current?.value
-      ? router.push(`/words?searchQuery=${inputRef.current?.value}`)
+      ? router.push({
+          pathname: '/words',
+          query: {
+            searchQuery: inputRef.current?.value,
+            modeArabic: modeArabic,
+          },
+        })
       : router.push(`/words`);
     setIsKeyboardOpen(false);
   };
@@ -34,7 +46,8 @@ function Search({ query, count }: any) {
       }
 
       inputRef.current.setRangeText(letter);
-      inputRef.current.selectionStart = inputRef.current.selectionEnd = cursorPositionValue;
+      inputRef.current.selectionStart = inputRef.current.selectionEnd =
+        cursorPositionValue;
       inputRef.current.focus();
     }
   };
@@ -50,7 +63,7 @@ function Search({ query, count }: any) {
     <>
       <div className={styles.inputContainer}>
         <input
-          defaultValue={query}
+          defaultValue={value}
           className={styles.input}
           type="text"
           placeholder="Введите слово"

@@ -29,3 +29,9 @@ export const keyboardLetters = {
   thirdRowB: ['', '', '', '', '', 'ﻷ', 'ﻵ', 'ﻹ', '', '', ''],
   fourthRowB: ['', '', '', '', '', '', '', '', '', '', ''],
 };
+
+export enum SearchModesArabic {
+  Exact = 'exact',
+  Default = 'default',
+  Root = 'root',
+}
