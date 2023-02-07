@@ -17,6 +17,18 @@
   }
 }
 
+.popupContainer {
+  @media (max-width: 610px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
 .popup {
   position: absolute;
   top: 80px;
@@ -32,7 +44,20 @@
   box-shadow: 0 2px 10px rgb(0 0 0 / 15%);
 
   @media (max-width: 610px) {
-    display: none;
+    position: absolute;
+    top: auto;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+    width: 100vw;
+    height: 60vh;
+    min-height: 320px;
+    padding: 20px 34px;
+    background-color: #ffffff;
+    border-radius: 20px 20px 0 0;
   }
 }
 
@@ -43,12 +68,22 @@
   flex-wrap: wrap;
   gap: 14px;
   border: none;
+
+  @media (max-width: 610px) {
+    gap: 5px;
+  }
 }
 
 .popup legend {
   margin-bottom: 15px;
   font-size: 18px;
   font-weight: 700;
+
+  @media (max-width: 610px) {
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 500;
+  }
 }
 
 .popup input {
@@ -76,5 +111,20 @@
     height: 22px;
     border: 1px solid #54a0ff;
     border-radius: 50%;
+  }
+}
+
+.competedButton {
+  display: none;
+  cursor: pointer;
+
+  @media (max-width: 610px) {
+    display: block;
+    margin-top: 10px;
+    padding: 12px 24px;
+    color: #ffffff;
+    background-color: #54a0ff;
+    border: none;
+    border-radius: 10px;
   }
 }

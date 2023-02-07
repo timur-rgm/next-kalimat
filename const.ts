@@ -35,3 +35,8 @@ export enum SearchModesArabic {
   Default = 'default',
   Root = 'root',
 }
+
+export enum SearchModesTranslation {
+  Keywords = 'keywords',
+  Full = 'full-text',
+}

@@ -1,15 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { SearchModesArabic } from '@/const';
+import { SearchModesArabic, SearchModesTranslation } from '@/const';
 
 export interface ProcessState {
-  searchValue: string;
+  search: string;
   modeArabic: string;
+  modeCyrillic: string;
 }
 
 const initialState: ProcessState = {
-  searchValue: '',
-  modeArabic: '',
+  search: '',
+  modeArabic: 'exact',
+  modeCyrillic: 'keywords',
 };
 
 export const processSlice = createSlice({
@@ -17,14 +19,17 @@ export const processSlice = createSlice({
   initialState,
   reducers: {
     setSearchValue: (state, action: PayloadAction<string>) => {
-      state.searchValue = action.payload;
+      state.search = action.payload;
     },
     setModeArabic: (state, action: PayloadAction<SearchModesArabic>) => {
       state.modeArabic = action.payload;
     },
+    setModeCyrillic: (state, action: PayloadAction<SearchModesTranslation>) => {
+      state.modeCyrillic = action.payload;
+    },
   },
 });
 
-export const { setSearchValue, setModeArabic } = processSlice.actions;
+export const { setSearchValue, setModeArabic, setModeCyrillic } = processSlice.actions;
 
 export default processSlice.reducer;

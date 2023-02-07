@@ -1,45 +1,50 @@
 import { useRef, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSearchValue } from '@/store/process/slice';
-import { getModeArabic } from '@/store/process/selectors';
+import { getModeArabic, getModeCyrillic } from '@/store/process/selectors';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
 import Keyboard from './keyboard';
+import { isStringCyrillic } from '@/utils';
 import searchButtonIcon from '../public/images/search-button-icon.svg';
 import styles from '../styles/components/search.module.scss';
 import cn from 'classnames';
 
-function Search({ value, count }: any) {
+function Search({ value, count }: any): JSX.Element {
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
   const [isKeyboardOpen, setIsKeyboardOpen] = useState<boolean>(false);
   const modeArabic = useSelector(getModeArabic);
+  const modeCyrillic = useSelector(getModeCyrillic);
   const dispatch = useDispatch();
 
   const handleSearchButtonClick = () => {
     if (inputRef.current?.value) {
       dispatch(setSearchValue(inputRef.current?.value));
 
-      modeArabic
-        ? router.push({
-            pathname: '/words',
-            query: {
-              searchQuery: inputRef.current?.value,
-              modeArabic: modeArabic,
-            },
-          })
-        : router.push({
-            pathname: '/words',
-            query: {
-              searchQuery: inputRef.current?.value,
-            },
-          });
-    } else {
-      router.push(`/words`);
+      const isInputValueCyrillic = isStringCyrillic(inputRef.current?.value);
+
+      if (isInputValueCyrillic) {
+        router.push({
+          pathname: '/words',
+          query: {
+            search: inputRef.current?.value,
+            mode: modeCyrillic,
+          },
+        });
+      } else {
+        router.push({
+          pathname: '/words',
+          query: {
+            search: inputRef.current?.value,
+            mode: modeArabic,
+          },
+        });
+      }
+
+      setIsKeyboardOpen(false);
     }
-    
-    setIsKeyboardOpen(false);
   };
 
   const handleKeyboardIconClick = () => {
@@ -129,10 +134,13 @@ function Search({ value, count }: any) {
       ) : (
         <p className={styles.randomQuery}>
           Случайные запросы:{' '}
-          <Link href="/words?searchQuery=كتاب">
+          <Link href="/words?search=كتاب&mode=exact">
             <span className={styles.randomQueryArabic}>كتاب</span>
           </Link>{' '}
-          или книга
+          или{' '}
+          <Link href="/words?search=книга&mode=keywords">
+            <span className={styles.randomQueryArabic}>книга</span>
+          </Link>
         </p>
       )}
     </>
