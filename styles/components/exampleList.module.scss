@@ -51,10 +51,19 @@
   font-size: 18px;
   line-height: 27px;
   color: #54a0ff;
-  background-color: #ddecff;
+  background-color: rgba(84, 160, 255, 0.1);
   border: none;
   border-radius: 10px;
   cursor: pointer;
+
+  &:hover {
+    background-color: #ddecff;
+  }
+
+  &:active {
+    background-color: rgba(84, 160, 255, 0.1);
+    border: 2px solid #54a0ff;
+  }
 }
 
 .arrowIcon {

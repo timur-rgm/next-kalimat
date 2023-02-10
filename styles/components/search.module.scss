@@ -38,6 +38,16 @@
       font-size: 14px;
     }
   }
+
+  &.cyrillic {
+    font-family: 'Muller';
+    font-size: 18px;
+    font-weight: 400;
+
+    @media (max-width: 610px) {
+      font-size: 14px;
+    }
+  }
 }
 
 .button {
@@ -51,10 +61,15 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  transition: all ease-in-out 200ms;
 
   @media (max-width: 610px) {
     width: 45px;
     height: 45px;
+  }
+
+  &:hover {
+    opacity: 0.5;
   }
 }
 

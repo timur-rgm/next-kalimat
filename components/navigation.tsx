@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import ModalMenu from './modalMenu';
 import helpIcon from '../public/images/help-icon.svg';
 import toggleIcon from '../public/images/menu-burger-icon.svg';
@@ -16,17 +17,25 @@ function Navigation(): JSX.Element {
   return (
     <nav className={styles.root}>
       <ul className={styles.list}>
-        <li>Библиотека</li>
-        <li>Курсы</li>
-        <li>Разделы</li>
         <li>
-          <Image
-            className={styles.helpIcon}
-            src={helpIcon}
-            alt="Иконка справки"
-            width={24}
-            height={24}
-          />
+          <Link href="#">Библиотека</Link>
+        </li>
+        <li>
+          <Link href="#">Курсы</Link>
+        </li>
+        <li>
+          <Link href="#">Разделы</Link>
+        </li>
+        <li>
+          <Link href="#">
+            <Image
+              className={styles.helpIcon}
+              src={helpIcon}
+              alt="Иконка справки"
+              width={24}
+              height={24}
+            />
+          </Link>
         </li>
       </ul>
       <button className={styles.toggleButton} type="button">

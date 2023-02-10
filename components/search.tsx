@@ -15,6 +15,7 @@ function Search({ value, count }: any): JSX.Element {
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
   const [isKeyboardOpen, setIsKeyboardOpen] = useState<boolean>(false);
+  const [isArabic, setIsArabic] = useState<boolean>(true);
   const modeArabic = useSelector(getModeArabic);
   const modeCyrillic = useSelector(getModeCyrillic);
   const dispatch = useDispatch();
@@ -53,6 +54,10 @@ function Search({ value, count }: any): JSX.Element {
 
   const handleKeyboardButtonClick = (letter: string) => {
     if (inputRef.current) {
+      const isInputValueCyrillic = isStringCyrillic(inputRef.current?.value);
+
+      isInputValueCyrillic ? setIsArabic(false) : setIsArabic(true);
+
       let cursorPositionValue = 0;
 
       if (inputRef.current.selectionStart !== null) {
@@ -73,16 +78,25 @@ function Search({ value, count }: any): JSX.Element {
     }
   };
 
+  const handleInputChange = () => {
+    if (inputRef.current?.value) {
+      const isInputValueCyrillic = isStringCyrillic(inputRef.current?.value);
+
+      isInputValueCyrillic ? setIsArabic(false) : setIsArabic(true);
+    }
+  };
+
   return (
     <>
       <div className={styles.inputContainer}>
         <input
           defaultValue={value}
-          className={styles.input}
+          className={cn(styles.input, { [styles.cyrillic]: !isArabic })}
           type="text"
           placeholder="Введите слово"
           ref={inputRef}
           dir="auto"
+          onChange={handleInputChange}
         />
         <div
           className={cn(styles.keyboardIconContainer, {

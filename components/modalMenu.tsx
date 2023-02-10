@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Image from 'next/image';
 import closeIcon from '../public/images/close-icon.svg';
 import logoImg from '../public/images/logo.svg';
@@ -29,12 +30,12 @@ function ModalMenu({ onCloseIconClick }: ModalMenuPropsType) {
           />
         </div>
         <ul className={styles.menuList}>
-          <li>Библиотека</li>
-          <li>Курсы</li>
-          <li>Разделы</li>
-          <li>Курсы</li>
-          <li>Коран</li>
-          <li>Справочник </li>
+          <li><Link href="#">Библиотека</Link></li>
+          <li><Link href="#">Курсы</Link></li>
+          <li><Link href="#">Разделы</Link></li>
+          <li><Link href="#">Курсы</Link></li>
+          <li><Link href="#">Коран</Link></li>
+          <li><Link href="#">Справочник</Link></li>
         </ul>
       </div>
     </div>
