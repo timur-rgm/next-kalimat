@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSearchValue } from '@/store/process/slice';
 import { getModeArabic, getModeCyrillic } from '@/store/process/selectors';
@@ -19,6 +19,14 @@ function Search({ value, count }: any): JSX.Element {
   const modeArabic = useSelector(getModeArabic);
   const modeCyrillic = useSelector(getModeCyrillic);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (inputRef.current?.value) {
+      const isInputValueCyrillic = isStringCyrillic(inputRef.current?.value);
+      
+      isInputValueCyrillic ? setIsArabic(false) : setIsArabic(true);
+    }
+  }, []);
 
   const handleSearchButtonClick = () => {
     if (inputRef.current?.value) {
