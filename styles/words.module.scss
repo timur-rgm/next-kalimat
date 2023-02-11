@@ -10,7 +10,7 @@
     padding: 58px 64px 0;
   }
 
-  @media (max-width: 390px) {
+  @media (max-width: 610px) {
     padding: 20px 16px 0;
   }
 }
@@ -31,6 +31,10 @@
 .cardListContainer {
   margin-top: 52px;
   padding-bottom: 80px;
+
+  @media (max-width: 768px) {
+    margin-top: 20px;
+  }
 
   @media (max-width: 390px) {
     padding-bottom: 52px;
