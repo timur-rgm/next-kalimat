@@ -5,7 +5,7 @@ function Social(): JSX.Element {
   return (
     <ul className={styles.root}>
       <li>
-        <Link href="#">
+         <Link href="#">
           <svg
             width="24"
             height="24"
@@ -24,7 +24,7 @@ function Social(): JSX.Element {
         </Link>
       </li>
       <li>
-        <Link href="#">
+        <Link href="https://t.me/kalimat_blog">
           <svg
             width="29"
             height="24"
@@ -43,7 +43,7 @@ function Social(): JSX.Element {
         </Link>
       </li>
       <li>
-        <Link href="#">
+        <Link href="https://www.youtube.com/channel/UCygZUhMj1AcYZhqCwg43QOg">
           <svg
             width="32"
             height="24"
