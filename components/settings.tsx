@@ -17,7 +17,7 @@ function Settings(): JSX.Element {
   const router = useRouter();
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  
+
   const formRef = useRef<HTMLFormElement>(null);
 
   const searchValue = useSelector(getSearchValue);

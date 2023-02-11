@@ -1,12 +1,17 @@
-import React from 'react';;
+import React from 'react';
 import Link from 'next/link';
 import { diacritics } from '../const';
+import { WordType } from '@/types/word';
 import styles from '../styles/components/cardList.module.scss';
 
-function CardList({ words }: any): JSX.Element {
+type CardListPropsType = {
+  words: WordType[];
+};
+
+function CardList({ words }: CardListPropsType): JSX.Element {
   return (
     <ul className={styles.root}>
-      {words?.map((word: any) => (
+      {words?.map((word) => (
         <li key={word.id} className={styles.card}>
           <header className={styles.header}>
             <Link href={`/words/${word.id}`} key={word.id}>
@@ -30,11 +35,12 @@ function CardList({ words }: any): JSX.Element {
               </p>
             )}
           </header>
-          {word.type === 'noun' && word.additionalInfo &&
+          {word.type === 'noun' &&
+            word.additionalInfo &&
             word.additionalInfo.pluralForms.length > 0 && (
               <dl className={styles.extra}>
                 <dt>Мн:</dt>
-                {word.additionalInfo.pluralForms.map((item: any, i: number) => (
+                {word.additionalInfo.pluralForms.map((item, i) => (
                   <React.Fragment key={item + i}>
                     {word.additionalInfo.pluralForms.length > 1 && i > 0 && (
                       <p className={styles.or}>или</p>
@@ -44,21 +50,23 @@ function CardList({ words }: any): JSX.Element {
                 ))}
               </dl>
             )}
-          {word.type === 'verb' && word.additionalInfo && word.additionalInfo.masdars.length > 0 && (
-            <dl className={styles.extra}>
-              <dt>Масдары:</dt>
-              {word.additionalInfo.masdars.map((item: any, i: number) => (
-                <React.Fragment key={item + i}>
-                  {word.additionalInfo.masdars.length > 1 && i > 0 && (
-                    <p className={styles.or}>или</p>
-                  )}
-                  <dd>{item}</dd>
-                </React.Fragment>
-              ))}
-            </dl>
-          )}
+          {word.type === 'verb' &&
+            word.additionalInfo &&
+            word.additionalInfo.masdars.length > 0 && (
+              <dl className={styles.extra}>
+                <dt>Масдары:</dt>
+                {word.additionalInfo.masdars.map((item, i) => (
+                  <React.Fragment key={item + i}>
+                    {word.additionalInfo.masdars.length > 1 && i > 0 && (
+                      <p className={styles.or}>или</p>
+                    )}
+                    <dd>{item}</dd>
+                  </React.Fragment>
+                ))}
+              </dl>
+            )}
           <ul className={styles.translationsList}>
-            {word.translations.map((traslation: any, i: number) => (
+            {word.translations.map((traslation, i) => (
               <li key={traslation.id}>
                 {i + 1}
                 {`)`} {traslation.text}

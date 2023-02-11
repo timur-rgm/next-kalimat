@@ -14,8 +14,8 @@ function FooterLogo(): JSX.Element {
           width={41}
           height={62}
         />
-        </Link>
-        <Link href="#">
+      </Link>
+      <Link href="#">
         <div className={styles.title}>
           <h3>Kalimat</h3>
           <p>

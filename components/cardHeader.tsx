@@ -1,7 +1,12 @@
 import { Tabs, partsOfSpeech, diacritics } from '@/const';
+import { WordType } from '@/types/word';
 import styles from '@/styles/components/cardHeader.module.scss';
 
-function CardHeader({ word }: any): JSX.Element {
+type CardHeaderPropsType = {
+  word: WordType;
+};
+
+function CardHeader({ word }: CardHeaderPropsType): JSX.Element {
   return (
     <header className={styles.root}>
       <h1 className={styles.title}>{word.arabicText}</h1>

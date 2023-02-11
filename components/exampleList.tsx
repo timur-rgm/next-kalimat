@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { TranslationType } from '@/types/word';
 import arrowIcon from '../public/images/arrow-icon.svg';
 import styles from '@/styles/components/exampleList.module.scss';
 import cn from 'classnames';
 
-function ExampleList({ traslation }: any) {
+type ExampleListPropsType = {
+  traslation: TranslationType;
+};
+
+function ExampleList({ traslation }: ExampleListPropsType): JSX.Element {
   const [isMoreButtonPressed, setIsMoreButtonPressed] =
     useState<boolean>(false);
 

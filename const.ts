@@ -7,13 +7,13 @@ export enum Tabs {
   Connections = 'Связи',
 }
 
-export const diacritics: any = {
+export const diacritics: {[key: string]: string} = {
   a: 'А',
   i: 'И',
   u: 'У',
 };
 
-export const partsOfSpeech: any = {
+export const partsOfSpeech: {[key: string]: string} = {
   noun: 'Исм (имя)',
   verb: 'Глагол (фи`ль)',
   particle: 'Частица (харф)',

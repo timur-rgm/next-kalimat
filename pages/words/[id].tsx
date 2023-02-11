@@ -1,13 +1,18 @@
 import CardHeader from '@/components/cardHeader';
 import CardContent from '@/components/cardContent';
+import { WordType } from '@/types/word';
 import styles from '@/styles/components/word.module.scss';
 
-function Word({word}: any): JSX.Element {
+type WordPropsType = {
+  word: WordType;
+};
+
+function Word({ word }: WordPropsType): JSX.Element {
   return (
     <main className={styles.root}>
       <div className={styles.wrapper}>
-        <CardHeader word={word}/>
-        <CardContent word={word}/>
+        <CardHeader word={word} />
+        <CardContent word={word} />
       </div>
     </main>
   );

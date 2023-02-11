@@ -9,10 +9,18 @@ import Search from '@/components/search';
 import Settings from '@/components/settings';
 import CardList from '@/components/cardList';
 import NotFound from '@/components/notFound';
+import { SearchModesArabic, SearchModesTranslation } from '@/const';
 import { isStringCyrillic } from '@/utils';
+import { WordType } from '@/types/word';
 import styles from '@/styles/words.module.scss';
 
-export default function Words({ words, searchQuery, modeQuery }: any) {
+type WordsPropsType = {
+  words: WordType[];
+  searchQuery: string;
+  modeQuery: SearchModesArabic & SearchModesTranslation;
+};
+
+function Words({ words, searchQuery, modeQuery }: WordsPropsType) {
   const wordsCount = words?.length;
 
   const dispatch = useDispatch();
@@ -66,3 +74,5 @@ export async function getServerSideProps(context: any) {
     props: {},
   };
 }
+
+export default Words;

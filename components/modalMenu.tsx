@@ -30,12 +30,24 @@ function ModalMenu({ onCloseIconClick }: ModalMenuPropsType) {
           />
         </div>
         <ul className={styles.menuList}>
-          <li><Link href="#">Библиотека</Link></li>
-          <li><Link href="#">Курсы</Link></li>
-          <li><Link href="#">Разделы</Link></li>
-          <li><Link href="#">Курсы</Link></li>
-          <li><Link href="#">Коран</Link></li>
-          <li><Link href="#">Справочник</Link></li>
+          <li>
+            <Link href="#">Библиотека</Link>
+          </li>
+          <li>
+            <Link href="#">Курсы</Link>
+          </li>
+          <li>
+            <Link href="#">Разделы</Link>
+          </li>
+          <li>
+            <Link href="#">Курсы</Link>
+          </li>
+          <li>
+            <Link href="#">Коран</Link>
+          </li>
+          <li>
+            <Link href="#">Справочник</Link>
+          </li>
         </ul>
       </div>
     </div>

@@ -11,7 +11,12 @@ import searchButtonIcon from '../public/images/search-button-icon.svg';
 import styles from '../styles/components/search.module.scss';
 import cn from 'classnames';
 
-function Search({ value, count }: any): JSX.Element {
+type SearchPropsType = {
+  value?: string;
+  count?: number;
+};
+
+function Search({ value, count }: SearchPropsType): JSX.Element {
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
   const [isKeyboardOpen, setIsKeyboardOpen] = useState<boolean>(false);
@@ -22,35 +27,33 @@ function Search({ value, count }: any): JSX.Element {
 
   useEffect(() => {
     if (inputRef.current?.value) {
-      const isInputValueCyrillic = isStringCyrillic(inputRef.current?.value);
-      
+      const isInputValueCyrillic = isStringCyrillic(inputRef.current.value);
+
       isInputValueCyrillic ? setIsArabic(false) : setIsArabic(true);
     }
   }, []);
 
   const handleSearchButtonClick = () => {
     if (inputRef.current?.value) {
-      dispatch(setSearchValue(inputRef.current?.value));
+      dispatch(setSearchValue(inputRef.current.value));
 
-      const isInputValueCyrillic = isStringCyrillic(inputRef.current?.value);
+      const isInputValueCyrillic = isStringCyrillic(inputRef.current.value);
 
-      if (isInputValueCyrillic) {
-        router.push({
-          pathname: '/words',
-          query: {
-            search: inputRef.current?.value,
-            mode: modeCyrillic,
-          },
-        });
-      } else {
-        router.push({
-          pathname: '/words',
-          query: {
-            search: inputRef.current?.value,
-            mode: modeArabic,
-          },
-        });
-      }
+      isInputValueCyrillic
+        ? router.push({
+            pathname: '/words',
+            query: {
+              search: inputRef.current?.value,
+              mode: modeCyrillic,
+            },
+          })
+        : router.push({
+            pathname: '/words',
+            query: {
+              search: inputRef.current?.value,
+              mode: modeArabic,
+            },
+          });
 
       setIsKeyboardOpen(false);
     }
@@ -88,7 +91,7 @@ function Search({ value, count }: any): JSX.Element {
 
   const handleInputChange = () => {
     if (inputRef.current?.value) {
-      const isInputValueCyrillic = isStringCyrillic(inputRef.current?.value);
+      const isInputValueCyrillic = isStringCyrillic(inputRef.current.value);
 
       isInputValueCyrillic ? setIsArabic(false) : setIsArabic(true);
     }

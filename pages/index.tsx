@@ -5,7 +5,7 @@ import SiteSections from '@/components/siteSections';
 import videoIcon from '@/public/images/video-play-icon.svg';
 import styles from '../styles/home.module.scss';
 
-function Home() {
+function Home(): JSX.Element {
   return (
     <main className={styles.main}>
       <div className={styles.mainWrapper}>
