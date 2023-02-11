@@ -1,3 +1,4 @@
+import { GetServerSideProps } from 'next';
 import CardHeader from '@/components/cardHeader';
 import CardContent from '@/components/cardContent';
 import { WordType } from '@/types/word';
@@ -18,7 +19,7 @@ function Word({ word }: WordPropsType): JSX.Element {
   );
 }
 
-export async function getServerSideProps(context: any) {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const id = context.params?.id;
 
   const response = await fetch(`https://stage.kalimat.io/api/dictionary/${id}`);
@@ -29,6 +30,6 @@ export async function getServerSideProps(context: any) {
       word: data,
     },
   };
-}
+};
 
 export default Word;

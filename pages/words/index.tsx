@@ -1,3 +1,4 @@
+import { GetServerSideProps } from 'next';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import {
@@ -50,7 +51,7 @@ function Words({ words, searchQuery, modeQuery }: WordsPropsType) {
   );
 }
 
-export async function getServerSideProps(context: any) {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const searchQuery = context.query.search;
   const modeQuery = context.query.mode;
 
@@ -73,6 +74,6 @@ export async function getServerSideProps(context: any) {
   return {
     props: {},
   };
-}
+};
 
 export default Words;
